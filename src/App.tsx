@@ -1,12 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LotteryApp from "./LottertApp";
 
 function App() {
   return (
-    <div className="App">
-    LOTTERY
-    </div>
+   <LotteryApp maxDigit={90}/>
   );
 }
 
