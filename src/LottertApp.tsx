@@ -7,6 +7,7 @@ type LotteryAppPropsType = {
     //CurrentNumberOne: number
 }
 
+
 const LotteryApp = (Props: LotteryAppPropsType) => {
     const Middle: Array<number> = []
 
@@ -18,13 +19,14 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     }
 
     let partOfField = NumberCreator(90)
+    let arrayWithAllNumbers = partOfField
     //this contains an array of numbers in the draw
 
-    const [numbersInPlay, setNumbersInPlay] = useState<Array<number>>(partOfField)
+    const [numbersInPlay, setNumbersInPlay] = useState<Array<number>>(arrayWithAllNumbers)
     const emptyArray:Array<number> = []
     const [arrayToPush, setArrayToPush ] = useState<Array<number>>(emptyArray)
 
-
+/////////////TESTING------
 
     const ContainerCreator = partOfField.map(m => <div key={m} className={"container"}><p>{[m]}</p></div>)
 
@@ -33,10 +35,28 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     const Generating = () => {
         //BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG
         //NEED TO FIX BUG ( ZERO CAN DROP)
-        const CurrentNumber = Math.floor(Math.random() * Props.maxDigit)
+        //BUG WAS FIXED? NEED MORE TESTS
+        const CurrentNumber = Math.ceil(Math.random() * Props.maxDigit)
         setNumberOfDigit(CurrentNumber)
         console.log(CurrentNumber)
+
+
         const FilteredArrayOfNumbers = partOfField.filter(f => f !== CurrentNumber)
+
+
+//
+//         const clearArrays = (arr:number[],arr2:number[]):number[] => {
+//
+//             let a = arr.concat(arr2).sort()
+//             let b = a.reduce((acc, item) => {
+//                 acc[item] = acc[item] ? acc[item] + 1 : 1;
+//                 return acc;
+//             }, {});
+//             const result = Object.keys(b).filter((item) => b[item] < 2);
+//
+//             return result
+//         }
+// const newNunbers = x
         setNumbersInPlay(FilteredArrayOfNumbers)
         let onetimeFiltered = arrayToPush.push(CurrentNumber)
         const Otne = emptyArray.push(CurrentNumber)
@@ -47,6 +67,8 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         setArrayToPush(arrayToPush)
         console.log(partOfField)
         console.log(emptyArray)
+        console.log(numbersInPlay)
+
 
         //const FilteredArrayOfNumbersOne = Props.arrayOfNumbers.filter(f => f !== Props.CurrentNumberOne)
         // Props.setCurrentValuesArray(FilteredArrayOfNumbersOne)
