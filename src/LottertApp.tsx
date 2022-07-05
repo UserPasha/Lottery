@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import Table from "./Components/Table";
+import Field from "./Components/Field";
 
 type LotteryAppPropsType = {
     maxDigit: number
@@ -8,7 +10,7 @@ type emptyArrayType = number[]
 
 
 const LotteryApp = (Props: LotteryAppPropsType) => {
-    const Middle:emptyArrayType = []
+    const Middle: emptyArrayType = []
 
     const NumberCreator = (maxDigit: number) => {
         for (let i = 1; i <= maxDigit; i++) {
@@ -22,58 +24,50 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     //this contains an array of numbers in the draw
 
     const [numbersInPlay, setNumbersInPlay] = useState<Array<number>>(arrayWithAllNumbers)
-    const emptyArray:Array<number> = []
-    const [arrayToPush, setArrayToPush ] = useState<Array<number>>(emptyArray)
+    //this array of playing numbers
+
+    const emptyArray: Array<number> = []
+    const [arrayToPush, setArrayToPush] = useState<Array<number>>(emptyArray)
     //this is array of dropped numbers
 
+    const [color, setColor] = useState<number[]>(emptyArray)
 
-    const ContainerCreator = partOfField.map(m => <div key={m} className={"container"}><p>{[m]}</p></div>)
 
     const [numberOfDigit, setNumberOfDigit] = useState<number>(0)
 
     const Generating = () => {
-        //BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG BUG
-        //NEED TO FIX BUG ( ZERO CAN DROP)
-        //BUG WAS FIXED? NEED MORE TESTS
-        const CurrentNumber = Math.ceil(Math.random() * Props.maxDigit)
+        
+        const CurrentNumber = numbersInPlay[Math.ceil(Math.random() * numbersInPlay.length-1)]
+        
         setNumberOfDigit(CurrentNumber)
-        console.log(CurrentNumber)
-
-
-        const FilteredArrayOfNumbers = partOfField.filter(f => f !== CurrentNumber)
-
-
-
+        
+        const FilteredArrayOfNumbers = numbersInPlay.filter(f => f !== CurrentNumber)
+        
         setNumbersInPlay(FilteredArrayOfNumbers)
         let onetimeFiltered = arrayToPush.push(CurrentNumber)
 
+
+        console.log(CurrentNumber)
         console.log(arrayToPush)
-        console.log(partOfField)
+        console.log(FilteredArrayOfNumbers)
         console.log(emptyArray)
         console.log(numbersInPlay)
-        const newEmptyArray :emptyArrayType = []
-        const updatedArray :emptyArrayType = [...arrayToPush.concat( newEmptyArray)]
+        console.log(color)
+
+        const newEmptyArray: emptyArrayType = []
+        const updatedArray: emptyArrayType = [...arrayToPush.concat(newEmptyArray)]
 
         setArrayToPush(updatedArray)
-
+        setColor(arrayToPush)
     }
 
     return (
         <div className={'appWrapper'}>
             <div className={"TableWrapper"}>
                 <button onClick={Generating}>GENERATE</button>
-                <div className={"Table"}>
-                    {numberOfDigit}
-                    ---
-                    {numbersInPlay}
-                   <div className={"DroppedNumbers"}>---
-                    {arrayToPush}</div>
-                </div>
+                <Table arrayToPush={arrayToPush} numberOfDigit={numberOfDigit} numbersInPlay={numbersInPlay}/>
             </div>
-            <div className={"playingFieldWrapper"}>
-                {ContainerCreator}
-
-            </div>
+            <Field partOfField={partOfField} color={color}/>
         </div>
     );
 }
