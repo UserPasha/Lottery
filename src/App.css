@@ -39,11 +39,18 @@
     cursor: pointer;
 }
 .Table{
-    width: 100px;
+    width: 500px;
     height: 100px;
     margin: 0 auto;
     border: 5px solid blue;
 }
+.DroppedNumbers {
+    width: 380px;
+    min-height: 20px;
+    margin: 0 auto;
+    border: 1px solid #5eff00;
+}
+
 .LostDigits{
     width: 80px;
     height: 30px;

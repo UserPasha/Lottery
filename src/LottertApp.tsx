@@ -2,14 +2,13 @@ import React, {useState} from 'react';
 
 type LotteryAppPropsType = {
     maxDigit: number
-    //arrayOfNumbers: number[]
-    //setCurrentValuesArray: (arrayOfNumbers: number[]) => void
-    //CurrentNumberOne: number
 }
+
+type emptyArrayType = number[]
 
 
 const LotteryApp = (Props: LotteryAppPropsType) => {
-    const Middle: Array<number> = []
+    const Middle:emptyArrayType = []
 
     const NumberCreator = (maxDigit: number) => {
         for (let i = 1; i <= maxDigit; i++) {
@@ -25,8 +24,8 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     const [numbersInPlay, setNumbersInPlay] = useState<Array<number>>(arrayWithAllNumbers)
     const emptyArray:Array<number> = []
     const [arrayToPush, setArrayToPush ] = useState<Array<number>>(emptyArray)
+    //this is array of dropped numbers
 
-/////////////TESTING------
 
     const ContainerCreator = partOfField.map(m => <div key={m} className={"container"}><p>{[m]}</p></div>)
 
@@ -44,34 +43,19 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         const FilteredArrayOfNumbers = partOfField.filter(f => f !== CurrentNumber)
 
 
-//
-//         const clearArrays = (arr:number[],arr2:number[]):number[] => {
-//
-//             let a = arr.concat(arr2).sort()
-//             let b = a.reduce((acc, item) => {
-//                 acc[item] = acc[item] ? acc[item] + 1 : 1;
-//                 return acc;
-//             }, {});
-//             const result = Object.keys(b).filter((item) => b[item] < 2);
-//
-//             return result
-//         }
-// const newNunbers = x
+
         setNumbersInPlay(FilteredArrayOfNumbers)
         let onetimeFiltered = arrayToPush.push(CurrentNumber)
-        const Otne = emptyArray.push(CurrentNumber)
-        setArrayToPush(arrayToPush)
-        // setArrayToPush(Otne)
-        // const CopyOnetimeFiltered = [...onetimeFiltered]
+
         console.log(arrayToPush)
-        setArrayToPush(arrayToPush)
         console.log(partOfField)
         console.log(emptyArray)
         console.log(numbersInPlay)
+        const newEmptyArray :emptyArrayType = []
+        const updatedArray :emptyArrayType = [...arrayToPush.concat( newEmptyArray)]
 
+        setArrayToPush(updatedArray)
 
-        //const FilteredArrayOfNumbersOne = Props.arrayOfNumbers.filter(f => f !== Props.CurrentNumberOne)
-        // Props.setCurrentValuesArray(FilteredArrayOfNumbersOne)
     }
 
     return (
@@ -82,8 +66,8 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
                     {numberOfDigit}
                     ---
                     {numbersInPlay}
-                    ---
-                    {arrayToPush}
+                   <div className={"DroppedNumbers"}>---
+                    {arrayToPush}</div>
                 </div>
             </div>
             <div className={"playingFieldWrapper"}>
