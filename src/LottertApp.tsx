@@ -33,6 +33,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     const [color, setColor] = useState<number[]>(emptyArray)
 
 
+
     const [numberOfDigit, setNumberOfDigit] = useState<number>(0)
 
     const Generating = () => {
@@ -42,7 +43,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         setNumberOfDigit(CurrentNumber)
         
         const FilteredArrayOfNumbers = numbersInPlay.filter(f => f !== CurrentNumber)
-        
+
         setNumbersInPlay(FilteredArrayOfNumbers)
         let onetimeFiltered = arrayToPush.push(CurrentNumber)
 
@@ -67,7 +68,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
                 <button onClick={Generating}>GENERATE</button>
                 <Table arrayToPush={arrayToPush} numberOfDigit={numberOfDigit} numbersInPlay={numbersInPlay}/>
             </div>
-            <Field partOfField={partOfField} color={color}/>
+            <Field partOfField={partOfField} color={color} arrayToPush={arrayToPush}  />
         </div>
     );
 }
