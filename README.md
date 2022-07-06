@@ -1,2 +1,2 @@
 Lottery
-[Play](https://userpasha.github.io/lottery).
+[Play](https://userpasha.github.io/Lottery/)
