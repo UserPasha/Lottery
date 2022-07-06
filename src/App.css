@@ -1,3 +1,6 @@
+body{
+    background: rgb(228, 136, 73);
+}
 .containerCreator {
     width: 100px;
     height: 100px;
@@ -6,76 +9,130 @@
 }
 
 .appWrapper {
-    width: 1300px;
+    width: 1600px;
     min-height: 100px;
     margin: 0 auto;
-    border: 5px solid blue;
+    border: 5px solid rgb(3, 57, 73);
+    border-radius: 20px;
+    background: rgb(189, 231, 232);
 }
 
 .TableWrapper {
-    width: 1200px;
-    height: 200px;
+    display: flex;
+    width: 90%;
+    min-height: 200px;
     margin: 0 auto;
-    border: 5px solid blue;
+    border: 5px solid rgb(228, 136, 73);
+    border-radius: 20px;
+    background: rgb(130, 200, 201);
+    justify-content: space-around;
+}
+
+.currentNumber {
+    font-size: 100px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 150px;
+
+    border-radius: 20px;
+    text-align: center;
+    border: 5px solid rgb(3, 57, 73);
+    background: rgb(228, 136, 73);
+    color: white;
+    animation: neonForContainer 5s infinite;
 }
 
 .playingFieldWrapper {
-    margin: 0 auto;
-    width: 1200px;
+    margin: 5px auto;
+    width: 75%;
     min-height: 500px;
-    border: 3px solid blue;
+    border: 3px solid rgb(228, 136, 73);
+    border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
 }
 
 .container {
-    margin: 0 auto;
+    margin: 5px auto;
     width: 100px;
     height: 100px;
-    border: 5px solid blue;
+    border-radius: 20px;
+    border: 5px solid rgb(228, 136, 73);
+    background: rgb(3, 57, 73);
+    color: rgb(228, 136, 73);
+}
+
+.container p, .coloredContainer p {
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    font-weight: bolder;
+    line-height: 20px;
 }
 
 .coloredContainer {
-    margin: 0 auto;
+    margin: 5px auto;
+    border-radius: 20px;
     width: 100px;
     height: 100px;
-    border: 5px solid blue;
-    background: yellow;
+    border: 5px solid rgb(3, 57, 73);
+    background: rgb(228, 136, 73);
+    color: rgb(3, 57, 73);
 }
 
-.TableWrapper button {
-    width: 500px;
-    height: 100px;
-    border: 5px solid blue;
-    margin: 10px 0 0 calc(1300px - 60%);
-    cursor: pointer;
-}
 
 .Table {
-    width: 500px;
+    position: relative;
+    top: 10px;
+    margin-left: 30px;
+    width: 60%;
     min-height: 100px;
+    border: 5px solid rgb(228, 136, 73);
+    border-radius: 20px;
+}
+
+.generateButton {
+    position: relative;
+    top: 10px;
+    width: 300px;
+    height: 150px;
     margin: 0 auto;
-    border: 5px solid blue;
+    border: #211f21 2px solid;
+    border-radius: 20px;
+}
+
+.generateButton button {
+    font-size: 40px;
+    font-weight: bold;
+    width: 300px;
+    height: 150px;
+    border: 5px solid rgb(228, 136, 73);
+    border-radius: 20px;
+    background: rgb(3, 57, 73);
+    color: rgb(228, 136, 73);
 }
 
 .DroppedNumbers {
     display: flex;
     flex-wrap: wrap;
-    width: 380px;
-    min-height: 20px;
+    width: 90%;
+    min-height: 50px;
     margin: 0 auto;
-    border: 1px solid #5eff00;
+    padding: 20px;
     text-align: center;
     line-height: 30px;
     font-size: 30px;
 }
 
 .DroppedNumberItem {
+    line-height: 50px;
     width: 50px;
-    height: 30px;
-    margin: 0 auto;
-    background: #bf00ff;
+    height: 50px;
+    margin: 1px;
+    background: #211f21;
     border-radius: 40%;
     color: #fff;
 }
@@ -88,4 +145,17 @@
     width: 80px;
     height: 30px;
     border: 5px solid #5eff00;
+}
+
+@keyframes neonForContainer {
+    0%, 39%, 41%, 59%, 61%, 100% {
+        text-shadow: #a69f0b 0 0 12px,
+        rgb(0, 91, 92) 0 0 24px,
+        rgb(0, 142, 143) 0 0 36px;
+    }
+    40%, 60% {
+        text-shadow: #0c0c0c 0 0 12px,
+        #171511 0 0 24px,
+        #171714 0 0 36px;
+    }
 }

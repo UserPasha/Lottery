@@ -1,29 +1,13 @@
 import React, {useState} from 'react';
 
 type FieldPropsType = {
-    partOfField: number[]
+    startNumbers: number[]
     color: number[]
     arrayToPush: number[]
 }
 const Field = (Props: FieldPropsType) => {
-    // <div key={m} className={[m]===Props.color?"coloredContainer": "container"}><p>{[m]}</p></div>)
-//const classnameDetected = Props.partOfField.fiter(array(f)!==)
-    function detector(arr: number[], arr2: number[]) {
-        for (let i = 0; i < arr.length; i++) {
-            if (arr2.includes(arr[i])) {
-               return true
-            }
-        }
-    }
-    const check = detector(Props.partOfField, Props.color)
 
-
-//const colorized = Props.partOfField.includes(Props.partOfField[])
-    console.log(Props.partOfField)
-    console.log(Props.arrayToPush)
-    console.log(Props.color)
-
-    const ContainerCreator = Props.partOfField.map(m =>
+    const ContainerCreator = Props.startNumbers.map(m =>
         <div key={m} className={
             Props.color[0] === m || Props.color[1] === m ||
             Props.color[2] === m || Props.color[3] === m ||

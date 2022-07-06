@@ -3,7 +3,6 @@ import React from 'react';
 
 type TablePropsType = {
     numberOfDigit: number
-    numbersInPlay: number[]
     arrayToPush: number[]
 
 }
@@ -16,9 +15,6 @@ const Table = (Props: TablePropsType) => {
 
     return (
         <div className={"Table"}>
-            {Props.numberOfDigit}
-            ---
-            {Props.numbersInPlay}
             <div className={"DroppedNumbers"}>
                 {DroppedNumbersTable}
             </div>

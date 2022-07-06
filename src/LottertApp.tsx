@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Table from "./Components/Table";
 import Field from "./Components/Field";
+import CurrentNumberComponent from "./Components/CurrentNumberComponent";
+import GenerateButton from "./Components/GenerateButton";
 
 type LotteryAppPropsType = {
     maxDigit: number
@@ -19,8 +21,8 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         return Middle
     }
 
-    let partOfField = NumberCreator(90)
-    let arrayWithAllNumbers = partOfField
+    let startNumbers = NumberCreator(Props.maxDigit)
+    let arrayWithAllNumbers = startNumbers
     //this contains an array of numbers in the draw
 
     const [numbersInPlay, setNumbersInPlay] = useState<Array<number>>(arrayWithAllNumbers)
@@ -33,15 +35,14 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     const [color, setColor] = useState<number[]>(emptyArray)
 
 
-
     const [numberOfDigit, setNumberOfDigit] = useState<number>(0)
 
     const Generating = () => {
-        
-        const CurrentNumber = numbersInPlay[Math.ceil(Math.random() * numbersInPlay.length-1)]
-        
+
+        const CurrentNumber = numbersInPlay[Math.ceil(Math.random() * numbersInPlay.length - 1)]
+
         setNumberOfDigit(CurrentNumber)
-        
+
         const FilteredArrayOfNumbers = numbersInPlay.filter(f => f !== CurrentNumber)
 
         setNumbersInPlay(FilteredArrayOfNumbers)
@@ -65,10 +66,11 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     return (
         <div className={'appWrapper'}>
             <div className={"TableWrapper"}>
-                <button onClick={Generating}>GENERATE</button>
-                <Table arrayToPush={arrayToPush} numberOfDigit={numberOfDigit} numbersInPlay={numbersInPlay}/>
+                <CurrentNumberComponent numberOfDigit={numberOfDigit}/>
+                <Table arrayToPush={arrayToPush} numberOfDigit={numberOfDigit}/>
+                <GenerateButton Generating={Generating}/>
             </div>
-            <Field partOfField={partOfField} color={color} arrayToPush={arrayToPush}  />
+            <Field startNumbers={startNumbers} color={color} arrayToPush={arrayToPush}/>
         </div>
     );
 }
