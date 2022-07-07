@@ -10,7 +10,6 @@ type LotteryAppPropsType = {
 
 type emptyArrayType = number[]
 
-
 const LotteryApp = (Props: LotteryAppPropsType) => {
     const Middle: emptyArrayType = []
 
@@ -32,8 +31,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     const [arrayToPush, setArrayToPush] = useState<Array<number>>(emptyArray)
     //this is array of dropped numbers
 
-    const [color, setColor] = useState<number[]>(emptyArray)
-
+    const [droppedAndColored, setDroppedAndColored] = useState<number[]>(emptyArray)
 
     const [numberOfDigit, setNumberOfDigit] = useState<number>(0)
 
@@ -48,19 +46,19 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         setNumbersInPlay(FilteredArrayOfNumbers)
         let onetimeFiltered = arrayToPush.push(CurrentNumber)
 
-
-        console.log(CurrentNumber)
-        console.log(arrayToPush)
-        console.log(FilteredArrayOfNumbers)
-        console.log(emptyArray)
-        console.log(numbersInPlay)
-        console.log(color)
-
         const newEmptyArray: emptyArrayType = []
         const updatedArray: emptyArrayType = [...arrayToPush.concat(newEmptyArray)]
 
         setArrayToPush(updatedArray)
-        setColor(arrayToPush)
+        setDroppedAndColored(arrayToPush)
+        // console.log(CurrentNumber)
+        // console.log(arrayToPush)
+        // console.log(FilteredArrayOfNumbers)
+        // console.log(emptyArray)
+        // console.log(numbersInPlay)
+        // console.log(color)
+
+
     }
 
     return (
@@ -70,7 +68,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
                 <Table arrayToPush={arrayToPush} numberOfDigit={numberOfDigit}/>
                 <GenerateButton Generating={Generating}/>
             </div>
-            <Field startNumbers={startNumbers} color={color} arrayToPush={arrayToPush}/>
+                <Field startNumbers={startNumbers} droppedAndColored={droppedAndColored} arrayToPush={arrayToPush}/>
         </div>
     );
 }
