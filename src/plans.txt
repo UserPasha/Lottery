@@ -1,0 +1,5 @@
+add RefreshButton (with alert?)
+need tests Lottery
+add Redux in Lottery
+adaptive (TV, comp, note, phone)
+create a tickets?

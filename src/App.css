@@ -162,3 +162,25 @@ body {
         rgb(0, 142, 143) 0 0 36px
     }
 }
+
+/*                  COUPON             */
+.couponWrapper{
+    margin: 0 auto;
+    width: 800px;
+    height: 500px;
+    border: 1px solid darkgreen;
+}
+.coupon{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    width: 90%;
+    height: 90%;
+    border: 3px solid #053105;
+}
+.couponItem{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #e48849;
+}

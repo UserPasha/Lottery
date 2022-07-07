@@ -17,7 +17,7 @@ const Field = (Props: FieldPropsType) => {
 
     const ContainerCreator = Props.startNumbers.map(m =>
         <div key={m} className={ WillWePaint(Props.droppedAndColored, m)? 'coloredContainer' : "container"}><p>{[m]}</p></div>)
-    
+
 
     return (
         <div className={"playingFieldWrapper"}>

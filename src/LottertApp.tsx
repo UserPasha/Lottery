@@ -3,6 +3,7 @@ import Table from "./Components/Table";
 import Field from "./Components/Field";
 import CurrentNumberComponent from "./Components/CurrentNumberComponent";
 import GenerateButton from "./Components/GenerateButton";
+import Coupon from "./Components/Coupon";
 
 type LotteryAppPropsType = {
     maxDigit: number
@@ -10,9 +11,10 @@ type LotteryAppPropsType = {
 
 type emptyArrayType = number[]
 
-const LotteryApp = (Props: LotteryAppPropsType) => {
-    const Middle: emptyArrayType = []
 
+const LotteryApp = (Props: LotteryAppPropsType) => {
+
+    const Middle: emptyArrayType = []
     const NumberCreator = (maxDigit: number) => {
         for (let i = 1; i <= maxDigit; i++) {
             Middle.push(i)
@@ -44,7 +46,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         const FilteredArrayOfNumbers = numbersInPlay.filter(f => f !== CurrentNumber)
 
         setNumbersInPlay(FilteredArrayOfNumbers)
-        let onetimeFiltered = arrayToPush.push(CurrentNumber)
+         arrayToPush.push(CurrentNumber)
 
         const newEmptyArray: emptyArrayType = []
         const updatedArray: emptyArrayType = [...arrayToPush.concat(newEmptyArray)]
@@ -69,6 +71,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
                 <GenerateButton Generating={Generating}/>
             </div>
                 <Field startNumbers={startNumbers} droppedAndColored={droppedAndColored} arrayToPush={arrayToPush}/>
+            <Coupon/>
         </div>
     );
 }
