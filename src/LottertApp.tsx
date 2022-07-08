@@ -3,7 +3,8 @@ import Table from "./Components/Table";
 import Field from "./Components/Field";
 import CurrentNumberComponent from "./Components/CurrentNumberComponent";
 import GenerateButton from "./Components/GenerateButton";
-import Coupon from "./Components/Coupon";
+import {CouponZone} from "./Components/CouponZone";
+import refresh from './Common/RefreshLogo.png'
 
 type LotteryAppPropsType = {
     maxDigit: number
@@ -33,9 +34,17 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     const [arrayToPush, setArrayToPush] = useState<Array<number>>(emptyArray)
     //this is array of dropped numbers
 
+
     const [droppedAndColored, setDroppedAndColored] = useState<number[]>(emptyArray)
 
     const [numberOfDigit, setNumberOfDigit] = useState<number>(0)
+
+    const refreshGame = () => {
+        setNumbersInPlay(startNumbers)
+        setArrayToPush(emptyArray)
+        setDroppedAndColored(emptyArray)
+        setNumberOfDigit(0)
+    }
 
     const Generating = () => {
 
@@ -46,33 +55,31 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         const FilteredArrayOfNumbers = numbersInPlay.filter(f => f !== CurrentNumber)
 
         setNumbersInPlay(FilteredArrayOfNumbers)
-         arrayToPush.push(CurrentNumber)
+        arrayToPush.push(CurrentNumber)
 
         const newEmptyArray: emptyArrayType = []
         const updatedArray: emptyArrayType = [...arrayToPush.concat(newEmptyArray)]
 
         setArrayToPush(updatedArray)
         setDroppedAndColored(arrayToPush)
-        // console.log(CurrentNumber)
-        // console.log(arrayToPush)
-        // console.log(FilteredArrayOfNumbers)
-        // console.log(emptyArray)
-        // console.log(numbersInPlay)
-        // console.log(color)
-
 
     }
 
     return (
-        <div className={'appWrapper'}>
-            <div className={"TableWrapper"}>
-                <CurrentNumberComponent numberOfDigit={numberOfDigit}/>
-                <Table arrayToPush={arrayToPush} numberOfDigit={numberOfDigit}/>
-                <GenerateButton Generating={Generating}/>
-            </div>
+        <>
+            <div className={"refreshButton"}
+                 onClick={refreshGame}><img src={refresh} alt={"Refresh Button"}/></div>
+
+            <div className={'appWrapper'}>
+                <div className={"TableWrapper"}>
+                    <CurrentNumberComponent numberOfDigit={numberOfDigit}/>
+                    <Table arrayToPush={arrayToPush} numberOfDigit={numberOfDigit}/>
+                    <GenerateButton Generating={Generating}/>
+                </div>
                 <Field startNumbers={startNumbers} droppedAndColored={droppedAndColored} arrayToPush={arrayToPush}/>
-            <Coupon/>
-        </div>
+                <CouponZone/>
+            </div>
+        </>
     );
 }
 
