@@ -2,4 +2,6 @@ add RefreshButton (with alert?)
 need tests Lottery
 add Redux in Lottery
 adaptive (TV, comp, note, phone)
-create a tickets?
+add navigation (react dom)
+create original game(90) and mini game(90)
+create tickets for it
