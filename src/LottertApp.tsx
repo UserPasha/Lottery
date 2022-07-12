@@ -65,10 +65,19 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
 
     }
 
+    const toggleMenu = ()=>{
+
+    }
+
     return (
         <>
             <div className={"refreshButton"}
                  onClick={refreshGame}><img src={refresh} alt={"Refresh Button"}/></div>
+            <div className={'menu'} onClick={toggleMenu}>
+                <div className={'menuItem'}></div>
+                <div className={'menuItem'}></div>
+                <div className={'menuItem'}></div>
+            </div>
 
             <div className={'appWrapper'}>
                 <div className={"TableWrapper"}>

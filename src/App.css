@@ -1,5 +1,5 @@
 body {
-    background: rgb(228, 136, 73);
+    background: var(--light-color);
 }
 
 .refreshButton {
@@ -8,10 +8,37 @@ body {
     left: 15px;
     width: 100px;
     height: 100px;
-    border: 5px solid rgb(3, 57, 73);
+    border: 5px solid var(--dark-color);
     border-radius: 50%;
-    background: rgb(130, 200, 201)
+    background: var(--bg-dark);
 }
+.menu{
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--dark-color);
+    border-radius: 50%;
+    background: var(--bg-dark);
+}
+.menuItem{
+    margin: 18px auto;
+    width: 60px;
+    height: 10px;
+    background: var(--dark-color)
+}
+.menu:hover{
+    background: var(--light-color);
+    cursor: pointer;
+}
+/*.menuItem:before, .menuItem:after{*/
+/*    content: "";*/
+/*    width: 60px;*/
+/*    height: 20px;*/
+/*    background: var(--bg-dark);*/
+/*    border: 1px solid var(--dark-color);*/
+/*}*/
 .refreshButton img{
     width: 100px;
     height: 100px;
@@ -19,8 +46,8 @@ body {
 .refreshButton:hover{
     transform: rotateZ(-45deg);
     cursor: pointer;
-    border: 5px solid rgb(3, 57, 73);
-    background: rgb(130, 200, 201)
+    border: 5px solid var(--dark-color);
+    background: var(--bg-dark);
 }
 .containerCreator {
     width: 100px;
@@ -33,20 +60,19 @@ body {
     width: 1600px;
     min-height: 100px;
     margin: 0 auto;
-    border: 5px solid rgb(3, 57, 73);
+    border: 5px solid var(--dark-color);
     border-radius: 20px;
-    background: rgb(130, 200, 201);
-
+    background: var(--bg-dark);
 }
 
 .TableWrapper {
     display: flex;
     width: 90%;
     min-height: 180px;
-    margin: 0 auto;
-    border: 5px solid rgb(228, 136, 73);
+    margin: 10px auto;
+    border: 5px solid var(--light-color);
     border-radius: 20px;
-    background: rgb(189, 231, 232);
+    background: var(--bg-light);
     justify-content: space-around;
 }
 
@@ -61,22 +87,22 @@ body {
 
     border-radius: 20px;
     text-align: center;
-    border: 5px solid rgb(3, 57, 73);
-    background: rgb(228, 136, 73);
+    border: 5px solid var(--dark-color);
+    background: var(--light-color);
     color: white;
     animation: neonForContainer 5s infinite;
 }
 
 .playingFieldWrapper {
-    margin: 5px auto;
+    margin: 10px auto;
     width: 75%;
     min-height: 500px;
-    border: 3px solid rgb(3, 57, 73);
+    border: 3px solid var(--dark-color);
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    background: rgb(130, 200, 201);
+    background: var(--bg-dark);
 }
 
 .container {
@@ -84,16 +110,16 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 20px;
-    border: 5px solid rgb(228, 136, 73);
-    background: rgb(3, 57, 73);
-    color: rgb(228, 136, 73);
+    border: 5px solid var(--light-color);
+    background: var(--dark-color);
+    color: var(--light-color);
 }
 
 .container p, .coloredContainer p, .couponItem p {
     font-family: 'Pacifico', cursive;
     font-size: 50px;
     font-weight: bolder;
-    line-height: 20px;
+    line-height: 1px;
 }
 
 .coloredContainer {
@@ -101,8 +127,8 @@ body {
     border-radius: 20px;
     width: 100px;
     height: 100px;
-    border: 5px solid rgb(3, 57, 73);
-    background: rgb(228, 136, 73);
+    border: 5px solid var(--dark-color);
+    background: var(--light-color);
     color: rgb(3, 57, 73);
 }
 
@@ -113,7 +139,7 @@ body {
     margin-left: 30px;
     width: 60%;
     min-height: 100px;
-    border-top: 5px solid rgb(228, 136, 73);
+    border-top: 5px solid var(--light-color);
     border-radius: 20px;
 }
 
@@ -132,10 +158,10 @@ body {
     font-weight: bold;
     width: 300px;
     height: 156px;
-    border: 5px solid rgb(228, 136, 73);
+    border: 5px solid var(--light-color);
     border-radius: 20px;
-    background: rgb(3, 57, 73);
-    color: rgb(228, 136, 73);
+    background: var(--dark-color);
+    color: var(--light-color);
 }
 
 .DroppedNumbers {
@@ -157,7 +183,7 @@ body {
     margin: 1px;
     background: #211f21;
     border-radius: 40%;
-    color: rgb(130, 200, 201);
+    color: var(--bg-dark);
 }
 
 .DroppedNumberItem p {
@@ -188,8 +214,8 @@ body {
     margin: 50px auto;
     width: 800px;
     min-height: 500px;
-    border: 1px solid darkgreen;
-    background: rgb(189, 231, 232);
+    border: 5px solid var(--dark-color);
+    background: var(--bg-light);
     border-radius: 20px;
 }
 
@@ -206,7 +232,7 @@ body {
     margin: 0 auto;
     width: 100px;
     height: 100px;
-    border: 2px solid #e48849;
+    border: 2px solid var(--light-color);
     border-radius: 50%;
 }
 .couponWrapper button{
@@ -214,25 +240,74 @@ body {
     font-weight: bold;
     width: 500px;
     height: 80px;
-    border: 5px solid rgb(228, 136, 73);
+    border: 5px solid var(--light-color);
     border-radius: 20px;
-    background: rgb(3, 57, 73);
-    color: rgb(228, 136, 73);
+    background: var(--dark-color);
+    color: var(--light-color);
     margin-top: 20px;
     margin-left: 18%;
 }
 .generateButton button:hover, .couponWrapper button:hover{
-    border: 5px solid  rgb(3, 57, 73);
-    background: rgb(228, 136, 73);
-    color: rgb(3, 57, 73);
+    border: 5px solid  var(--dark-color);;
+    background: var(--light-color);
+    color: var(--dark-color);
     cursor: pointer;
 }
 .blindItem {
     margin: 0 auto;
     width: 100px;
     height: 100px;
-    border: 2px solid #e48849;
-    background: rgb(189, 231, 232);
-    color: rgb(189, 231, 232);
+    border: 2px solid var(--light-color);
+    background: var(--bg-light);
+    color: var(--bg-light);
     border-radius: 50%;
+}
+
+@media (max-width: 1200px) {
+    .appWrapper {
+        width: 1200px;
+    }
+    .container, .coloredContainer {
+        width: 75px;
+        height: 75px;
+    }
+    .currentNumber {
+        font-size: 70px;
+        font-weight: bold;
+        position: relative;
+        top: 25px;
+        left: 20px;
+        width: 150px;
+        height: 100px;
+    }
+    .TableWrapper {
+        width: 900px;
+        min-height: 150px;
+    }
+    .Table {
+        top: 10px;
+        width: 480px;
+    }
+    .generateButton{
+        position: relative;
+        top: 20px;
+        width: 180px;
+        height: 100px;
+        margin: 0 auto;
+        border: #211f21 2px solid;
+        border-radius: 20px;
+    }
+    .generateButton button {
+        font-size: 30px;
+        width: 180px;
+        height: 100px;
+    }
+    .container p, .coloredContainer p, .couponItem p{
+        font-size: 36px;
+    }
+    .DroppedNumberItem {
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+    }
 }

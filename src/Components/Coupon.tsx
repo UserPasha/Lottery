@@ -37,6 +37,7 @@ const Coupon = (Props: CouponPropsType) => {
         let thirdCurrentDigit = Math.ceil(Math.random() * newArray2.length - 1)
         let threeDigitWithCurrentIndex = newArray2[thirdCurrentDigit]
         emptyArrayForDigits.push(threeDigitWithCurrentIndex)
+
        // let newArray3 = newArray2.filter(f => f !== threeDigitWithCurrentIndex)
         return emptyArrayForDigits.sort()
 
@@ -72,7 +73,8 @@ const Coupon = (Props: CouponPropsType) => {
     }
    // let startArrayWithAllDigits = DigitCreator(18)
     let DigitsForCoupon = generating()
-    console.log(DigitsForCoupon)
+    console.log("Digits for coupon"+DigitsForCoupon)
+    console.log("blind array "+blindArray)
 
     const [strings, setStrings] = useState<Array<number>>(DigitsForCoupon)
 
@@ -93,7 +95,7 @@ const Coupon = (Props: CouponPropsType) => {
     const CouponCreator = strings.map((m, index) =>
         <div key={m} className={WillWeBlind(blindArray, index)?"blindItem":'couponItem'}><p>{m}</p></div>
     )
-
+// 4 empty 5 full 6 strings (3+3)
     return (
         <>
         <div className={'coupon'}>

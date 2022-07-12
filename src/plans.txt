@@ -5,3 +5,6 @@ adaptive (TV, comp, note, phone)
 add navigation (react dom)
 create original game(90) and mini game(90)
 create tickets for it
+print tickets
+404 page
+multilanguage
