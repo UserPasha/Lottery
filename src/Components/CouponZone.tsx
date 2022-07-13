@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Coupon from "./Coupon";
 
-
-export const CouponZone = () => {
+type CouponZoneType = {
+    maxDigit: number
+}
+export const CouponZone = (Props: CouponZoneType) => {
 
     const StringCreator = (minDigit: number, maxDigit: number) => {
         const eArray: Array<number> = []
@@ -12,7 +14,7 @@ export const CouponZone = () => {
         return eArray
     }
 
-    let dualDigitsInString = (arr: number[]) => {
+    let ArrayOflDigitsInOneString = (arr: number[]) => {
         let emptyArrayForDigits = []
         let currentDigit = Math.ceil(Math.random() * arr.length - 1)
         let DigitWithCurrentIndex = arr[currentDigit]
@@ -25,7 +27,7 @@ export const CouponZone = () => {
         let thirdCurrentDigit = Math.ceil(Math.random() * newArray2.length - 1)
         let threeDigitWithCurrentIndex = newArray2[thirdCurrentDigit]
         emptyArrayForDigits.push(threeDigitWithCurrentIndex)
-         let newArray3 = newArray2.filter(f => f !== threeDigitWithCurrentIndex)
+        let newArray3 = newArray2.filter(f => f !== threeDigitWithCurrentIndex)
         //console.log("start array after 3 "+newArray3)
         //console.log("empty array after 3 "+emptyArrayForDigits)
         let fourthCurrentDigit = Math.ceil(Math.random() * newArray3.length - 1)
@@ -41,53 +43,133 @@ export const CouponZone = () => {
         emptyArrayForDigits.push(fiveDigitWithCurrentIndex)
         let newArray5 = newArray4.filter(f => f !== fiveDigitWithCurrentIndex)
         let sixthCurrentDigit = Math.ceil(Math.random() * newArray5.length - 1)
-        emptyArrayForDigits.push(sixthCurrentDigit)
-        console.log("total array 6 :  "+emptyArrayForDigits.sort())
-        return emptyArrayForDigits.sort()
+        let sixDigitWithCurrentIndex = newArray5[sixthCurrentDigit]
+        emptyArrayForDigits.push(sixDigitWithCurrentIndex)
+        return emptyArrayForDigits
+
     }
 
-    let dugitsFrom1To9 = StringCreator(1, 9)
-    let dugitsFrom10To19 = StringCreator(10, 19)
-    let dugitsFrom20To29 = StringCreator(20, 29)
-    let dugitsFrom30To39 = StringCreator(30, 39)
-    let dugitsFrom40To49 = StringCreator(40, 49)
-    let dugitsFrom50To59 = StringCreator(50, 59)
-    let dugitsFrom60To69 = StringCreator(60, 69)
-    let dugitsFrom70To79 = StringCreator(70, 79)
-    let dugitsFrom80To90 = StringCreator(80, 90)
-    let OneToNine = dualDigitsInString(dugitsFrom1To9)
-    let TenToNineteen = dualDigitsInString(dugitsFrom10To19)
-    let TwentyToTwentyNine = dualDigitsInString(dugitsFrom20To29)
-    let ThirtyToThirtyNine = dualDigitsInString(dugitsFrom30To39)
-    let F0rtyToFortyNine = dualDigitsInString(dugitsFrom40To49)
-    let FiftyToFiftyNine = dualDigitsInString(dugitsFrom50To59)
-    let sixtyToSixtyNine = dualDigitsInString(dugitsFrom60To69)
-    let seventyToSeventyNine = dualDigitsInString(dugitsFrom70To79)
-    let eightyToNinty = dualDigitsInString(dugitsFrom80To90)
+    let digits1To9 = StringCreator(1, 9)
+    let digits10To19 = StringCreator(10, 19)
+    let digits20To29 = StringCreator(20, 29)
+    let digits30To39 = StringCreator(30, 39)
+    let digits40To49 = StringCreator(40, 49)
+    let digits50To59 = StringCreator(50, 59)
+    let digits60To69 = StringCreator(60, 69)
+    let digits70To79 = StringCreator(70, 79)
+    let digits80To90 = StringCreator(80, 90)
 
-    let arrayToBigCouponPartUp = [OneToNine[0], TenToNineteen[0], TwentyToTwentyNine[0], ThirtyToThirtyNine[0], F0rtyToFortyNine[0],
-        FiftyToFiftyNine[0], sixtyToSixtyNine[0], seventyToSeventyNine[0], eightyToNinty[0], OneToNine[1], TenToNineteen[1], TwentyToTwentyNine[1],
-        ThirtyToThirtyNine[1], F0rtyToFortyNine[1], FiftyToFiftyNine[1], sixtyToSixtyNine[1], seventyToSeventyNine[1], eightyToNinty[1],
-        OneToNine[2], TenToNineteen[2], TwentyToTwentyNine[2], ThirtyToThirtyNine[2], F0rtyToFortyNine[2], FiftyToFiftyNine[2], sixtyToSixtyNine[2],
-        seventyToSeventyNine[2], eightyToNinty[2]]
-    let arrayToBigCouponPartDown = [OneToNine[3], TenToNineteen[3], TwentyToTwentyNine[3], ThirtyToThirtyNine[3], F0rtyToFortyNine[3],
-        FiftyToFiftyNine[3], sixtyToSixtyNine[3], seventyToSeventyNine[3], eightyToNinty[3], OneToNine[4], TenToNineteen[4], TwentyToTwentyNine[4],
-        ThirtyToThirtyNine[4], F0rtyToFortyNine[4], FiftyToFiftyNine[4], sixtyToSixtyNine[4], seventyToSeventyNine[4], eightyToNinty[4],
-        OneToNine[5], TenToNineteen[5], TwentyToTwentyNine[5], ThirtyToThirtyNine[5], F0rtyToFortyNine[5], FiftyToFiftyNine[5], sixtyToSixtyNine[5],
-        seventyToSeventyNine[5], eightyToNinty[5]]
+    let  digits50To60 = StringCreator(50, 60)
 
-    let blindArray0to8 = StringCreator(0, 8)
-    let blindArray9to17 = StringCreator(9, 17)
-    let blindArray18to26 = StringCreator(18, 26)
-    let blindArray = [blindArray0to8[0], blindArray0to8[1], blindArray0to8[2], blindArray0to8[3],
-        blindArray9to17[0], blindArray9to17[1], blindArray9to17[2], blindArray9to17[3],
-        blindArray18to26[0], blindArray18to26[1], blindArray18to26[2], blindArray18to26[3]]
+    const DigitsInCouponArrayCreator = () => {
+        let ArrayOflDigits1To9 = ArrayOflDigitsInOneString(digits1To9)
+        let ArrayOflDigits10To19 = ArrayOflDigitsInOneString(digits10To19)
+        let ArrayOflDigits20To29 = ArrayOflDigitsInOneString(digits20To29)
+        let ArrayOflDigits30To39 = ArrayOflDigitsInOneString(digits30To39)
+        let ArrayOflDigits40To49 = ArrayOflDigitsInOneString(digits40To49)
+        let ArrayOflDigits50To59 = ArrayOflDigitsInOneString(digits50To59)
+        let ArrayOflDigits60To69 = ArrayOflDigitsInOneString(digits60To69)
+        let ArrayOflDigits70To79 = ArrayOflDigitsInOneString(digits70To79)
+        let ArrayOflDigits80To90 = ArrayOflDigitsInOneString(digits80To90)
+
+
+        let ArrayToCoupon = [ArrayOflDigits1To9[0], ArrayOflDigits10To19[0], ArrayOflDigits20To29[0], ArrayOflDigits30To39[0], ArrayOflDigits40To49[0],
+            ArrayOflDigits50To59[0], ArrayOflDigits60To69[0], ArrayOflDigits70To79[0], ArrayOflDigits80To90[0], ArrayOflDigits1To9[1], ArrayOflDigits10To19[1], ArrayOflDigits20To29[1],
+            ArrayOflDigits30To39[1], ArrayOflDigits40To49[1], ArrayOflDigits50To59[1], ArrayOflDigits60To69[1], ArrayOflDigits70To79[1], ArrayOflDigits80To90[1],
+            ArrayOflDigits1To9[2], ArrayOflDigits10To19[2], ArrayOflDigits20To29[2], ArrayOflDigits30To39[2], ArrayOflDigits40To49[2], ArrayOflDigits50To59[2], ArrayOflDigits60To69[2],
+            ArrayOflDigits70To79[2], ArrayOflDigits80To90[2], ArrayOflDigits1To9[3], ArrayOflDigits10To19[3], ArrayOflDigits20To29[3], ArrayOflDigits30To39[3], ArrayOflDigits40To49[3],
+            ArrayOflDigits50To59[3], ArrayOflDigits60To69[3], ArrayOflDigits70To79[3], ArrayOflDigits80To90[3], ArrayOflDigits1To9[4], ArrayOflDigits10To19[4], ArrayOflDigits20To29[4],
+            ArrayOflDigits30To39[4], ArrayOflDigits40To49[4], ArrayOflDigits50To59[4], ArrayOflDigits60To69[4], ArrayOflDigits70To79[4], ArrayOflDigits80To90[4],
+            ArrayOflDigits1To9[5], ArrayOflDigits10To19[5], ArrayOflDigits20To29[5], ArrayOflDigits30To39[5], ArrayOflDigits40To49[5], ArrayOflDigits50To59[5], ArrayOflDigits60To69[5],
+            ArrayOflDigits70To79[5], ArrayOflDigits80To90[5]]
+        return ArrayToCoupon
+    }
+
+    const MiniDigitsInCouponArrayCreator = () => {
+        let dugitsFrom1To9 = StringCreator(1, 9)
+        let dugitsFrom10To19 = StringCreator(10, 19)
+        let dugitsFrom20To29 = StringCreator(20, 29)
+        let dugitsFrom30To39 = StringCreator(30, 39)
+        let dugitsFrom40To49 = StringCreator(40, 49)
+        let dugitsFrom50To60 = StringCreator(50, 60)
+        let ArrayForCoupon = [dugitsFrom1To9[0], dugitsFrom10To19[0], dugitsFrom20To29[0], dugitsFrom30To39[0], dugitsFrom40To49[0], dugitsFrom50To60[0],
+            dugitsFrom1To9[1], dugitsFrom10To19[1], dugitsFrom20To29[1], dugitsFrom30To39[1], dugitsFrom40To49[1], dugitsFrom50To60[1],
+            dugitsFrom1To9[2], dugitsFrom10To19[2], dugitsFrom20To29[2], dugitsFrom30To39[2], dugitsFrom40To49[2], dugitsFrom50To60[2],]
+        return ArrayForCoupon
+    }
+const BlindArrayCreator = ()=>{
+    let blindFrom0To5 = StringCreator(0, 5)
+    let arrayBlindFrom0To5 = ArrayOflDigitsInOneString(blindFrom0To5)
+    let blindFrom7To12 = StringCreator(6, 11)
+    let arrayBlindFrom7To12 = ArrayOflDigitsInOneString(blindFrom7To12)
+    let blindFrom13To18 = StringCreator(12, 17)
+    let arrayBlindFrom13To18 = ArrayOflDigitsInOneString(blindFrom13To18)
+    let MiniBlindArray2 = [arrayBlindFrom0To5[0], arrayBlindFrom0To5[1],
+        arrayBlindFrom7To12[0], arrayBlindFrom7To12[1],
+        arrayBlindFrom13To18[0], arrayBlindFrom13To18[1]]
+    return MiniBlindArray2
+}
+let MiniBlindArray = BlindArrayCreator()
+
+    let DigitsInCouponArray = DigitsInCouponArrayCreator()
+    let MiniDigitsInCouponArray = MiniDigitsInCouponArrayCreator()
+
+
+    let DigitsToGeneratingBlindNumbers0To8 = StringCreator(0, 8)
+    let DigitsToGeneratingBlindNumbers9To17 = StringCreator(9, 17)
+    let DigitsToGeneratingBlindNumbers18To26 = StringCreator(18, 26)
+    let DigitsToGeneratingBlindNumbers27To35 = StringCreator(27, 35)
+    let DigitsToGeneratingBlindNumbers36To45 = StringCreator(36, 44)
+    let DigitsToGeneratingBlindNumbers46To54 = StringCreator(45, 53)
+    const BlindInCouponArrayCreator = () => {
+        let blindArray0to8 = ArrayOflDigitsInOneString(DigitsToGeneratingBlindNumbers0To8)
+        let blindArray9to17 = ArrayOflDigitsInOneString(DigitsToGeneratingBlindNumbers9To17)
+        let blindArray18to26 = ArrayOflDigitsInOneString(DigitsToGeneratingBlindNumbers18To26)
+        let blindArray27to35 = ArrayOflDigitsInOneString(DigitsToGeneratingBlindNumbers27To35)
+        let blindArray36to45 = ArrayOflDigitsInOneString(DigitsToGeneratingBlindNumbers36To45)
+        let blindArray46to54 = ArrayOflDigitsInOneString(DigitsToGeneratingBlindNumbers46To54)
+
+        console.log(blindArray0to8)
+        let blindArray = [blindArray0to8[0], blindArray0to8[1], blindArray0to8[2], blindArray0to8[3],
+            blindArray9to17[0], blindArray9to17[1], blindArray9to17[2], blindArray9to17[3],
+            blindArray18to26[0], blindArray18to26[1], blindArray18to26[2], blindArray18to26[3],
+            blindArray27to35[0], blindArray27to35[1], blindArray27to35[2], blindArray27to35[3],
+            blindArray36to45[0], blindArray36to45[1], blindArray36to45[2], blindArray36to45[3],
+            blindArray46to54[0], blindArray46to54[1], blindArray46to54[2], blindArray46to54[3]
+
+        ]
+        let blindArray22 = [blindArray0to8[0], blindArray9to17[0], blindArray18to26[0], blindArray27to35[0], blindArray36to45[0], blindArray46to54[0],
+            blindArray0to8[1], blindArray9to17[1], blindArray18to26[1], blindArray27to35[1], blindArray36to45[1], blindArray46to54[1],
+            blindArray0to8[2], blindArray9to17[2], blindArray18to26[2], blindArray27to35[2], blindArray36to45[2], blindArray46to54[2],
+            blindArray0to8[3], blindArray9to17[3], blindArray18to26[3], blindArray27to35[3], blindArray36to45[3], blindArray46to54[3],
+            blindArray0to8[4], blindArray9to17[4], blindArray18to26[4], blindArray27to35[4], blindArray36to45[4], blindArray46to54[4],
+            blindArray0to8[5], blindArray9to17[5], blindArray18to26[5], blindArray27to35[5], blindArray36to45[5], blindArray46to54[5],
+        ]
+        let bl33 = [blindArray0to8[0],]
+        return blindArray
+    }
+    let StartBlindArray = BlindInCouponArrayCreator()
+    console.log(DigitsInCouponArray)
+    console.log(StartBlindArray)
+    console.log(MiniDigitsInCouponArray)
+    console.log(DigitsInCouponArray)
+    console.log(MiniBlindArray)
+    console.log(StartBlindArray)
 
     return (
-        <div className={'couponWrapper'}>
-
-                <Coupon/>
-        </div>
+        <>
+        //      where generating?
+        {Props.maxDigit>80?  <Coupon DigitsInCouponArrayCreator={DigitsInCouponArrayCreator}
+                                     DigitsInCouponArray={DigitsInCouponArray}
+                                     BlindInCouponArrayCreator={BlindInCouponArrayCreator}
+                                     StartBlindArray={StartBlindArray}
+        /> : <Coupon DigitsInCouponArrayCreator={MiniDigitsInCouponArrayCreator}
+                     DigitsInCouponArray={MiniDigitsInCouponArray}
+                     BlindInCouponArrayCreator={BlindArrayCreator}
+                     StartBlindArray={MiniBlindArray}
+        />}
+////ADD BOOLEAN TO GET CSS COUPON
+</>
     );
 };
 

@@ -15,19 +15,20 @@ type emptyArrayType = number[]
 
 const LotteryApp = (Props: LotteryAppPropsType) => {
 
-    const Middle: emptyArrayType = []
-    const NumberCreator = (maxDigit: number) => {
+
+    const QuantityNumbersArrayCreator = (maxDigit: number) => {
+        const Middle: emptyArrayType = []
         for (let i = 1; i <= maxDigit; i++) {
             Middle.push(i)
         }
         return Middle
     }
 
-    let startNumbers = NumberCreator(Props.maxDigit)
-    let arrayWithAllNumbers = startNumbers
+    let ArrayOfNumbers = QuantityNumbersArrayCreator(Props.maxDigit)
+    let ReadyToStartArray = ArrayOfNumbers
     //this contains an array of numbers in the draw
 
-    const [numbersInPlay, setNumbersInPlay] = useState<Array<number>>(arrayWithAllNumbers)
+    const [numbersInPlay, setNumbersInPlay] = useState<Array<number>>(ReadyToStartArray)
     //this array of playing numbers
 
     const emptyArray: Array<number> = []
@@ -35,14 +36,16 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     //this is array of dropped numbers
 
 
-    const [droppedAndColored, setDroppedAndColored] = useState<number[]>(emptyArray)
-
+   // const [droppedAndColored, setDroppedAndColored] = useState<number[]>(emptyArray)
+//droppedAndColored = arrayToPush ?
+  //  console.log(droppedAndColored === arrayToPush)
     const [numberOfDigit, setNumberOfDigit] = useState<number>(0)
+    //this number to storage of current number
 
     const refreshGame = () => {
-        setNumbersInPlay(startNumbers)
+        setNumbersInPlay(ArrayOfNumbers)
         setArrayToPush(emptyArray)
-        setDroppedAndColored(emptyArray)
+      //  setDroppedAndColored(emptyArray)
         setNumberOfDigit(0)
     }
 
@@ -61,7 +64,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         const updatedArray: emptyArrayType = [...arrayToPush.concat(newEmptyArray)]
 
         setArrayToPush(updatedArray)
-        setDroppedAndColored(arrayToPush)
+       // setDroppedAndColored(arrayToPush)
 
     }
 
@@ -85,8 +88,8 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
                     <Table arrayToPush={arrayToPush} numberOfDigit={numberOfDigit}/>
                     <GenerateButton Generating={Generating}/>
                 </div>
-                <Field startNumbers={startNumbers} droppedAndColored={droppedAndColored} arrayToPush={arrayToPush}/>
-                <CouponZone/>
+                <Field startNumbers={ArrayOfNumbers} arrayToPush={arrayToPush}/>
+                <CouponZone maxDigit={Props.maxDigit}/>
             </div>
         </>
     );

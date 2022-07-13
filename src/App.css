@@ -210,7 +210,24 @@ body {
 }
 
 /*                  COUPON             */
+
+.twoCoupons{
+    margin: 50px auto;
+    width: 1000px;
+    min-height: 500px;
+    border: 5px solid var(--dark-color);
+    background: var(--bg-light);
+    border-radius: 20px;
+}
 .couponWrapper {
+    margin: 50px auto;
+    width: 800px;
+    min-height: 300px;
+    border: 5px solid var(--dark-color);
+    background: var(--bg-light);
+    border-radius: 20px;
+}
+.BigCouponWrapper{
     margin: 50px auto;
     width: 800px;
     min-height: 500px;
@@ -227,15 +244,39 @@ body {
     height: 70%;
     text-align: center;
 }
-
-.couponItem {
+.bigCoupon{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    width: 90%;
+    height: 70%;
+    text-align: center;
+}
+.couponWrapper .coupon .couponItem {
     margin: 0 auto;
     width: 100px;
     height: 100px;
     border: 2px solid var(--light-color);
     border-radius: 50%;
 }
-.couponWrapper button{
+.BigCouponWrapper .bigCoupon .couponItem {
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--light-color);
+    border-radius: 50%;
+}
+
+.BigCouponWrapper .bigCoupon  .blindItem {
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--light-color);
+    background: var(--bg-light);
+    color: var(--bg-light);
+    border-radius: 50%;
+}
+.twoCoupons button{
     font-size: 40px;
     font-weight: bold;
     width: 500px;
@@ -247,7 +288,7 @@ body {
     margin-top: 20px;
     margin-left: 18%;
 }
-.generateButton button:hover, .couponWrapper button:hover{
+.generateButton button:hover, .twoCoupons button:hover{
     border: 5px solid  var(--dark-color);;
     background: var(--light-color);
     color: var(--dark-color);

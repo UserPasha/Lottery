@@ -2,7 +2,7 @@ import React from 'react';
 
 type FieldPropsType = {
     startNumbers: number[]
-    droppedAndColored: number[]
+    //droppedAndColored: number[]
     arrayToPush: number[]
 }
 const Field = (Props: FieldPropsType) => {
@@ -16,7 +16,7 @@ const Field = (Props: FieldPropsType) => {
     }
 
     const ContainerCreator = Props.startNumbers.map(m =>
-        <div key={m} className={ WillWePaint(Props.droppedAndColored, m)? 'coloredContainer' : "container"}><p>{[m]}</p></div>)
+        <div key={m} className={ WillWePaint(Props.arrayToPush, m)? 'coloredContainer' : "container"}><p>{[m]}</p></div>)
 
 
     return (

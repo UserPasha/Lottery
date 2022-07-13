@@ -1,5 +1,7 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
+import LotteryApp from "../LottertApp";
+import {PATH} from "../App";
 
 const HomePage = () => {
     return (<>
@@ -15,6 +17,11 @@ const HomePage = () => {
             <div>
                 <Link to={"/original-game"}>ORIGINAL</Link>
             </div>
+            <Routes>
+              <Route path={PATH.homepage} element={<HomePage/>}/>
+             <Route path={PATH.mini} element={<LotteryApp maxDigit={60}/>}/>
+             <Route path={PATH.original} element={<LotteryApp maxDigit={90}/>}/>
+            </Routes>
 
         </>
     );

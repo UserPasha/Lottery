@@ -15,14 +15,6 @@ function App() {
         <>
             <HomePage/>
 
-            <div>
-                <Routes>
-                    <Route path={PATH.homepage} element={<HomePage/>}/>
-                    <Route path={PATH.mini} element={<LotteryApp maxDigit={60}/>}/>
-                    <Route path={PATH.original} element={<LotteryApp maxDigit={90}/>}/>
-                </Routes>
-            </div>
-
         </>
     );
 }
