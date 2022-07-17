@@ -8,3 +8,4 @@ create tickets for it
 print tickets
 404 page
 multilanguage
+qr-code

@@ -11,6 +11,7 @@ type CouponPropsType = {
     BlindInCouponArrayCreator: ()=> number[]
     DigitsInCouponArrayCreator:()=> number[]
     StartBlindArray: number[]
+    cssBoolean: number
 }
 
 const Coupon = (Props: CouponPropsType) => {
@@ -113,28 +114,32 @@ const Coupon = (Props: CouponPropsType) => {
     //     <div key={m} className={WillWeBlind(blindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p></div>
     // )
 
+    console.log(newStrings)
+    console.log(newBlindArray)
+
     const newCouponCreator = newStrings.map((m, index) =>
         <div key={m} className={WillWeBlind(newBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p></div>
     )
+    const Printing = () =>{
+        window.print();
+    }
 
-// 4 empty 5 full 6 strings (3+3)
     return (
         <>
             <div className={'twoCoupons'}>
 
-
                 <div className={'couponWrapper'}>
-                    <div className={'coupon'}>
+
+                    <div className={Props.cssBoolean>80?"bigCoupon":"coupon"}>
                         {newCouponCreator}
 
                     </div>
+
                 </div>
-                {/*<div className={'BigCouponWrapper'}>*/}
-                {/*    <div className={'bigCoupon'}>*/}
-                {/*        {newCouponCreator}*/}
-                {/*    </div>*/}
-                {/*</div>*/}
+
                 <button onClick={ButtonGenerating}>GENERATE COUPON</button>
+                <a href="#" onClick={Printing} className="action-print">Распечатать</a>
+               {/*<a href= "Coupon.tsx" target="_blank"><button >PRINT COUPON</button></a>*/}
             </div>
 
         </>

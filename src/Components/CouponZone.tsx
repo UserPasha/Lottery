@@ -85,16 +85,19 @@ export const CouponZone = (Props: CouponZoneType) => {
         return ArrayToCoupon
     }
 
+    
     const MiniDigitsInCouponArrayCreator = () => {
-        let dugitsFrom1To9 = StringCreator(1, 9)
-        let dugitsFrom10To19 = StringCreator(10, 19)
-        let dugitsFrom20To29 = StringCreator(20, 29)
-        let dugitsFrom30To39 = StringCreator(30, 39)
-        let dugitsFrom40To49 = StringCreator(40, 49)
-        let dugitsFrom50To60 = StringCreator(50, 60)
-        let ArrayForCoupon = [dugitsFrom1To9[0], dugitsFrom10To19[0], dugitsFrom20To29[0], dugitsFrom30To39[0], dugitsFrom40To49[0], dugitsFrom50To60[0],
-            dugitsFrom1To9[1], dugitsFrom10To19[1], dugitsFrom20To29[1], dugitsFrom30To39[1], dugitsFrom40To49[1], dugitsFrom50To60[1],
-            dugitsFrom1To9[2], dugitsFrom10To19[2], dugitsFrom20To29[2], dugitsFrom30To39[2], dugitsFrom40To49[2], dugitsFrom50To60[2],]
+        let ArrayOflDigits1To9 = ArrayOflDigitsInOneString(digits1To9)
+        let ArrayOflDigits10To19 = ArrayOflDigitsInOneString(digits10To19)
+        let ArrayOflDigits20To29 = ArrayOflDigitsInOneString(digits20To29)
+        let ArrayOflDigits30To39 = ArrayOflDigitsInOneString(digits30To39)
+        let ArrayOflDigits40To49 = ArrayOflDigitsInOneString(digits40To49)
+        let ArrayOflDigits50To60 = ArrayOflDigitsInOneString(digits50To60)
+        
+        
+        let ArrayForCoupon = [ArrayOflDigits1To9[0], ArrayOflDigits10To19[0], ArrayOflDigits20To29[0], ArrayOflDigits30To39[0], ArrayOflDigits40To49[0], ArrayOflDigits50To60[0],
+            ArrayOflDigits1To9[1], ArrayOflDigits10To19[1], ArrayOflDigits20To29[1], ArrayOflDigits30To39[1], ArrayOflDigits40To49[1], ArrayOflDigits50To60[1],
+            ArrayOflDigits1To9[2], ArrayOflDigits10To19[2], ArrayOflDigits20To29[2], ArrayOflDigits30To39[2], ArrayOflDigits40To49[2], ArrayOflDigits50To60[2],]
         return ArrayForCoupon
     }
 const BlindArrayCreator = ()=>{
@@ -158,17 +161,19 @@ let MiniBlindArray = BlindArrayCreator()
 
     return (
         <>
-        //      where generating?
+
         {Props.maxDigit>80?  <Coupon DigitsInCouponArrayCreator={DigitsInCouponArrayCreator}
                                      DigitsInCouponArray={DigitsInCouponArray}
                                      BlindInCouponArrayCreator={BlindInCouponArrayCreator}
                                      StartBlindArray={StartBlindArray}
+                                     cssBoolean={Props.maxDigit}
         /> : <Coupon DigitsInCouponArrayCreator={MiniDigitsInCouponArrayCreator}
                      DigitsInCouponArray={MiniDigitsInCouponArray}
                      BlindInCouponArrayCreator={BlindArrayCreator}
                      StartBlindArray={MiniBlindArray}
+                     cssBoolean={Props.maxDigit}
         />}
-////ADD BOOLEAN TO GET CSS COUPON
+
 </>
     );
 };
