@@ -18,6 +18,10 @@ const Coupon = (Props: CouponPropsType) => {
     const [secondBlindArray, setSecondBlindArray] = useState<Array<number>>(Props.SecondStartBlindArray)
     const [thirdBlindArray, setThirdBlindArray] = useState<Array<number>>(Props.SecondStartBlindArray)
     const [forthBlindArray, setForthBlindArray] = useState<Array<number>>(Props.SecondStartBlindArray)
+    const [lock, setLock] = useState<boolean>(true)
+    const toggler = () => {
+        setLock(!lock)
+    }
     //console.log(newBlindArray)
 
     const ButtonGenerating = () => {
@@ -94,72 +98,67 @@ const Coupon = (Props: CouponPropsType) => {
     }
 
     return (
-        <>
+        <>{lock?
+            <div className={"closedCoupon"}>
+                <button onClick={toggler}>PRINT COUPONS</button>
+            </div>
+            :
             <div className={'twoCoupons'}>
 
-
                 {Props.cssBoolean > 80 ?
-                    <div className={"BigCouponWrapper"}>
-                        <div className={"bigCoupon"}>
-                            <div className={"BigCouponPart"}>
-                                {partUpCouponCreator}
-                            </div>
-                            <div className={"BigCouponPart"}>
-                                {partDownCouponCreator}
-                            </div>
-
-
-                            {/*{newCouponCreator}*/}
-
+                <div className={"BigCouponWrapper"}>
+                    <div className={"bigCoupon"}>
+                        <div className={"BigCouponPart"}>
+                            {partUpCouponCreator}
                         </div>
-                        <div className={"bigCoupon"}>
-                            <div className={"BigCouponPart"}>
-                                {secondPartUpCouponCreator}
-                            </div>
-                            <div className={"BigCouponPart"}>
-                                {secondPartDownCouponCreator}
-                            </div>
-
-
-                            {/*{newCouponCreator}*/}
-
+                        <div className={"BigCouponPart"}>
+                            {partDownCouponCreator}
                         </div>
 
                     </div>
-                    :
-                    (<>
-                        <div className={'couponWrapper'}>
-                            <div className={"coupon"}>
-
-                                {newCouponCreator}
-
-                            </div>
-
-                            <div className={"coupon"}>
-
-                                {secondCouponCreator}
-
-                            </div>
-
-                            <div className={"coupon"}>
-
-                                {thirdCouponCreator}
-
-                            </div>
+                    <div className={"bigCoupon"}>
+                        <div className={"BigCouponPart"}>
+                            {secondPartUpCouponCreator}
                         </div>
-                    </>)}
-                {/*<div className={Props.cssBoolean>80?"bigCoupon":"coupon"}>*/}
-                {/*    {newCouponCreator}*/}
+                        <div className={"BigCouponPart"}>
+                            {secondPartDownCouponCreator}
+                        </div>
 
-                {/*</div>*/}
+                    </div>
 
-                <div className={"couponButtons"}>
-                    <button onClick={ButtonGenerating}>GENERATE COUPON</button>
-                    <button onClick={Printing}>PRINT</button>
-                    {/*<a href="#" onClick={Printing} className="action-print">Распечатать</a>*/}
-                    {/*<a href= "Coupon.tsx" target="_blank"><button >PRINT COUPON</button></a>*/}
                 </div>
+                :
+                (<>
+                    <div className={'couponWrapper'}>
+                        <div className={"coupon"}>
+
+                            {newCouponCreator}
+
+                        </div>
+
+                        <div className={"coupon"}>
+
+                            {secondCouponCreator}
+
+                        </div>
+
+                        <div className={"coupon"}>
+
+                            {thirdCouponCreator}
+
+                        </div>
+                    </div>
+                </>)}
+
+
+            <div className={"couponButtons"}>
+                <button onClick={ButtonGenerating}>GENERATE COUPONS</button>
+                <button onClick={Printing}>PRINT</button>
+                <button onClick={toggler}>CLOSE</button>
+
             </div>
+        </div> }
+
 
         </>
     );
