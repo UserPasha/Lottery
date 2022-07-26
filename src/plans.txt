@@ -1,20 +1,15 @@
-General: Add confirm to refresh button
-         Refresh game after redirect
-         Tests
+General: Tests
          Redux?
-         Multilanguage
+         MultiLanguage
          Add QR-code
          Add 404 paige
          domain.online
 
 CSS: Adaptive(TV, comp, note, phone)
-     Menu (with button)
-     Main Paige
-     Coupon Design
+     Main Paige(phonePhoto version)
+     Coupon Design(add logo to leftsize)
 
-Print : Fix visible numbers
-        Split 2 part big coupon
-        add 3 coupons on a list(60) and 2 (90)
+Print : clean print(without borders and backgrounds)
 
 
 

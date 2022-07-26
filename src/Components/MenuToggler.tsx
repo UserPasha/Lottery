@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from "react-router-dom";
 
 
 type MenuToglerType = {
@@ -33,8 +34,7 @@ export const MenuToggler: React.FC<MenuToglerType> = ({refreshGame}) => {
                     </div>
 
                     <div className={'OpenMenuItem'}>
-                        {/*<Link to={"/homepage"}>EXIT</Link>*/}
-                        <a href={"/homepage"}>EXIT</a>
+                        <Link to={"/homepage"}>EXIT</Link>
                     </div>
 
                     <div className={'OpenMenuItem'} onClick={toggler}>
