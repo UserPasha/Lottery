@@ -2,7 +2,6 @@ import React from 'react';
 
 type FieldPropsType = {
     startNumbers: number[]
-    //droppedAndColored: number[]
     arrayToPush: number[]
 }
 const Field = (Props: FieldPropsType) => {
@@ -22,7 +21,6 @@ const Field = (Props: FieldPropsType) => {
     return (
         <div className={"playingFieldWrapper"}>
             {ContainerCreator}
-
         </div>
     );
 };

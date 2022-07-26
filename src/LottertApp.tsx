@@ -5,6 +5,7 @@ import CurrentNumberComponent from "./Components/CurrentNumberComponent";
 import GenerateButton from "./Components/GenerateButton";
 import {CouponZone} from "./Components/CouponZone";
 import refresh from './Common/RefreshLogo.png'
+import MenuToggler from "./Components/MenuToggler";
 
 type LotteryAppPropsType = {
     maxDigit: number
@@ -36,16 +37,16 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
     //this is array of dropped numbers
 
 
-   // const [droppedAndColored, setDroppedAndColored] = useState<number[]>(emptyArray)
+    // const [droppedAndColored, setDroppedAndColored] = useState<number[]>(emptyArray)
 //droppedAndColored = arrayToPush ?
-  //  console.log(droppedAndColored === arrayToPush)
+    //  console.log(droppedAndColored === arrayToPush)
     const [numberOfDigit, setNumberOfDigit] = useState<number>(0)
     //this number to storage of current number
 
     const refreshGame = () => {
         setNumbersInPlay(ArrayOfNumbers)
         setArrayToPush(emptyArray)
-      //  setDroppedAndColored(emptyArray)
+        //  setDroppedAndColored(emptyArray)
         setNumberOfDigit(0)
     }
 
@@ -64,23 +65,17 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
         const updatedArray: emptyArrayType = [...arrayToPush.concat(newEmptyArray)]
 
         setArrayToPush(updatedArray)
-       // setDroppedAndColored(arrayToPush)
+        // setDroppedAndColored(arrayToPush)
 
     }
 
-    const toggleMenu = ()=>{
-
-    }
 
     return (
         <>
-            <div className={"refreshButton"}
-                 onClick={refreshGame}><img src={refresh} alt={"Refresh Button"}/></div>
-            <div className={'menu'} onClick={toggleMenu}>
-                <div className={'menuItem'}></div>
-                <div className={'menuItem'}></div>
-                <div className={'menuItem'}></div>
-            </div>
+            {/*<div className={"refreshButton"}*/}
+            {/*     onClick={refreshGame}><img src={refresh} alt={"Refresh Button"}/></div>*/}
+
+            <MenuToggler refreshGame={refreshGame}/>
 
             <div className={'appWrapper'}>
                 <div className={"TableWrapper"}>

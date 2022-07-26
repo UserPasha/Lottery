@@ -1,11 +1,19 @@
-add RefreshButton (with alert?)
-need tests Lottery
-add Redux in Lottery
-adaptive (TV, comp, note, phone)
-add navigation (react dom)
-create original game(90) and mini game(90)
-create tickets for it
-print tickets
-404 page
-multilanguage
-qr-code
+General: Add confirm to refresh button
+         Refresh game after redirect
+         Tests
+         Redux?
+         Multilanguage
+         Add QR-code
+         Add 404 paige
+
+CSS: Adaptive(TV, comp, note, phone)
+     Menu (with button)
+     Main Paige
+     Coupon Design
+
+Print : Fix visible numbers
+        Split 2 part big coupon
+        add 3 coupons on a list(60) and 2 (90)
+
+
+
