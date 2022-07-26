@@ -5,6 +5,7 @@ General: Add confirm to refresh button
          Multilanguage
          Add QR-code
          Add 404 paige
+         domain.online
 
 CSS: Adaptive(TV, comp, note, phone)
      Menu (with button)

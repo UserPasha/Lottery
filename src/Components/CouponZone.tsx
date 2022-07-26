@@ -135,12 +135,14 @@ let MiniBlindArray = BlindArrayCreator()
         console.log(blindArray0to8)
         let blindArray = [blindArray0to8[0], blindArray0to8[1], blindArray0to8[2], blindArray0to8[3],
             blindArray9to17[0], blindArray9to17[1], blindArray9to17[2], blindArray9to17[3],
-            blindArray18to26[0], blindArray18to26[1], blindArray18to26[2], blindArray18to26[3],
-            blindArray27to35[0], blindArray27to35[1], blindArray27to35[2], blindArray27to35[3],
-            blindArray36to45[0], blindArray36to45[1], blindArray36to45[2], blindArray36to45[3],
-            blindArray46to54[0], blindArray46to54[1], blindArray46to54[2], blindArray46to54[3]
+            blindArray18to26[0], blindArray18to26[1], blindArray18to26[2], blindArray18to26[3]]
 
-        ]
+        //     ,
+        //     blindArray27to35[0], blindArray27to35[1], blindArray27to35[2], blindArray27to35[3],
+        //     blindArray36to45[0], blindArray36to45[1], blindArray36to45[2], blindArray36to45[3],
+        //     blindArray46to54[0], blindArray46to54[1], blindArray46to54[2], blindArray46to54[3]
+        //
+        // ]
         let blindArray22 = [blindArray0to8[0], blindArray9to17[0], blindArray18to26[0], blindArray27to35[0], blindArray36to45[0], blindArray46to54[0],
             blindArray0to8[1], blindArray9to17[1], blindArray18to26[1], blindArray27to35[1], blindArray36to45[1], blindArray46to54[1],
             blindArray0to8[2], blindArray9to17[2], blindArray18to26[2], blindArray27to35[2], blindArray36to45[2], blindArray46to54[2],
@@ -152,6 +154,7 @@ let MiniBlindArray = BlindArrayCreator()
         return blindArray
     }
     let StartBlindArray = BlindInCouponArrayCreator()
+    let SecondStartBlindArray = BlindInCouponArrayCreator()
     console.log(DigitsInCouponArray)
     console.log(StartBlindArray)
     console.log(MiniDigitsInCouponArray)
@@ -166,12 +169,14 @@ let MiniBlindArray = BlindArrayCreator()
                                      DigitsInCouponArray={DigitsInCouponArray}
                                      BlindInCouponArrayCreator={BlindInCouponArrayCreator}
                                      StartBlindArray={StartBlindArray}
+                                     SecondStartBlindArray={SecondStartBlindArray}
                                      cssBoolean={Props.maxDigit}
         /> : <Coupon DigitsInCouponArrayCreator={MiniDigitsInCouponArrayCreator}
                      DigitsInCouponArray={MiniDigitsInCouponArray}
                      BlindInCouponArrayCreator={BlindArrayCreator}
                      StartBlindArray={MiniBlindArray}
                      cssBoolean={Props.maxDigit}
+                     SecondStartBlindArray={SecondStartBlindArray}
         />}
 
 </>

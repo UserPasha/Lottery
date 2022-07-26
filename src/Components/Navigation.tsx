@@ -6,17 +6,17 @@ const Navigation = () => {
     return (
         <div className={'NavigationWrapper'}>
             <div className={'NavigatioItem'}>
-                <Link to={"/homepage"}>HOMEPAGE</Link>
+                <Link to={"/homepage"}>PLAY</Link>
             </div>
-            <div className={'NavigatioItem'} >
-                <Link to={"/mini-game"}>MINI</Link>
-            </div>
-            <div className={'NavigatioItem'}>
-                <Link to={"/original-game"}>ORIGINAL</Link>
-            </div>
-            <div className={'NavigatioItem'}>
-                <Link to={"/print"} target="_blank">PRINT</Link>
-            </div>
+            {/*<div className={'NavigatioItem'} >*/}
+            {/*    <Link to={"/mini-game"}></Link>*/}
+            {/*</div>*/}
+            {/*<div className={'NavigatioItem'}>*/}
+            {/*    <Link to={"/original-game"}></Link>*/}
+            {/*</div>*/}
+            {/*<div className={'NavigatioItem'}>*/}
+            {/*    <Link to={"/print"} target="_blank"></Link>*/}
+            {/*</div>*/}
 
         </div>
     );

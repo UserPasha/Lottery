@@ -11,17 +11,20 @@ export const PATH = {
     mini: "/mini-game",
     original: "/original-game",
     homepage: "/homepage",
-    print: "/print"
+    print: "/print",
+    home:""
 }
 
 function App() {
     return (<>
             {/*<Navigation/>*/}
+            {/*<HomePage/>*/}
         <Routes>
             <Route path={PATH.homepage} element={<HomePage/>}/>
             <Route path={PATH.mini} element={<LotteryApp maxDigit={60}/>}/>
             <Route path={PATH.original} element={<LotteryApp maxDigit={90}/>}/>
             <Route path={PATH.print} element={<PrintPage/>}/>
+            <Route path={PATH.home} element={<HomePage/>}/>
         </Routes>
         </>
     );
