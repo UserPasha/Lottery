@@ -1,4 +1,5 @@
 General: Tests
+         Naming
          Redux?
          MultiLanguage
          Add QR-code
@@ -7,7 +8,7 @@ General: Tests
 
 CSS: Adaptive(TV, comp, note, phone)
      Main Paige(phonePhoto version)
-     Coupon Design(add logo to leftsize)
+     Coupon Design(add logo to leftside)
 
 Print : clean print(without borders and backgrounds)
 

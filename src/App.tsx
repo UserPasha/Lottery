@@ -5,8 +5,6 @@ import {Route, Routes} from "react-router-dom";
 import LotteryApp from "./LottertApp";
 import PrintPage from "./Components/PrintPage";
 
-
-
 export const PATH = {
     mini: "/mini-game",
     original: "/original-game",

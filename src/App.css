@@ -60,7 +60,7 @@ body {
 
 .menu {
     position: fixed;
-    top: 50px;
+    top: 40px;
     left: 180px;
     width: 100px;
     height: 100px;
@@ -80,7 +80,7 @@ body {
     margin: 16px auto;
     width: 40px;
     height: 10px;
-    background: var(--light-color)
+    background: var(--dark-color)
 }
 
 .OpenedMenu {
@@ -97,7 +97,7 @@ body {
 
 .CircleMenu {
     position: fixed;
-    top: 50px;
+    top: 40px;
     left: 180px;
     width: 100px;
     height: 100px;
@@ -105,6 +105,14 @@ body {
     border-radius: 50%;
     background: var(--bg-dark);
     cursor: pointer;
+}
+.CircleMenu .menuItemInside{
+    background: var(--dark-color);
+}
+.CircleMenu:hover{
+    border: 5px solid var(--dark-color);
+    background: var(--light-color);
+
 }
 
 .OpenMenuWrapper {
@@ -191,7 +199,7 @@ body {
 .TableWrapper {
     display: flex;
     width: 1000px;
-    min-height: 120px;
+    min-height: 100px;
     margin: 10px auto;
     border: 5px solid var(--light-color);
     border-radius: 20px;
@@ -200,13 +208,13 @@ body {
 }
 
 .currentNumber {
-    font-size: 66px;
+    font-size: 56px;
     font-weight: bold;
     position: relative;
     top: 10px;
     left: 10px;
     width: 160px;
-    height: 90px;
+    height: 76px;
 
     border-radius: 20px;
     text-align: center;
@@ -296,7 +304,7 @@ body {
     position: relative;
     top: 10px;
     width: 260px;
-    height: 100px;
+    height: 80px;
     margin: 0 auto;
     border: #211f21 2px solid;
     border-radius: 20px;
@@ -306,7 +314,7 @@ body {
     font-size: 36px;
     font-weight: bold;
     width: 260px;
-    height: 100px;
+    height: 80px;
     border: 5px solid var(--light-color);
     border-radius: 20px;
     background: var(--dark-color);
@@ -410,7 +418,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 30px auto;
-    width: 80%;
+    width: 82%;
     height: 70%;
     text-align: center;
     border: 5px solid var(--dark-color);
@@ -438,7 +446,7 @@ body {
 }
 
 .couponWrapper .coupon .couponItem {
-    margin: 0 auto;
+    margin: 3px auto;
     width: 100px;
     height: 100px;
     border: 2px solid var(--light-color);
@@ -446,7 +454,7 @@ body {
 }
 
 .bigCoupon .couponItem {
-    margin: 0 auto;
+    margin: 2px auto;
     width: 70px;
     height: 70px;
     border: 2px solid var(--light-color);
@@ -526,18 +534,18 @@ body {
     }
 
     .currentNumber {
-        font-size: 62px;
+        font-size: 56px;
         font-weight: bold;
         position: relative;
         top: 10px;
         left: 20px;
         width: 150px;
-        height: 90px;
+        height: 76px;
     }
 
     .TableWrapper {
         width: 900px;
-        min-height: 130px;
+        min-height: 100px;
     }
 
     .Table {
@@ -549,7 +557,7 @@ body {
         position: relative;
         top: 10px;
         width: 180px;
-        height: 100px;
+        height: 80px;
         margin: 0 auto;
         border: #211f21 2px solid;
         border-radius: 20px;
@@ -558,7 +566,7 @@ body {
     .generateButton button {
         font-size: 30px;
         width: 180px;
-        height: 100px;
+        height: 80px;
     }
 
     .container p, .coloredContainer p, .couponItem p {
