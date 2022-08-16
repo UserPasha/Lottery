@@ -1,56 +1,54 @@
 import React from 'react';
+import logo from "./../Common/assets/images/caretta-beach.png"
 
 type CouponPropsType = {
     cssBoolean: number
     lock: boolean
+    couponPartOne: number[]
+    couponPartTwo: number[]
+    couponPartThree: number[]
+    couponPartFour: number[]
     toggler: () => void
-    slicedArrayPartUp: number[]
-    slicedArrayParDown: number[]
-    secondSlicedArrayPartUp: number[]
-    secondSlicedArrayParDown: number[]
     WillWeBlind: (arr: number[], index: number) => boolean | undefined
+    ButtonGenerating: () => void
     newBlindArray: number[]
     secondBlindArray: number[]
     thirdBlindArray: number[]
     forthBlindArray: number[]
-    newStrings: number[]
-    newStringsTwo: number[]
-    newStringsThree: number[]
-    ButtonGenerating: () => void
 }
 
 const Coupon = (Props: CouponPropsType) => {
 
-    const partUpCouponCreator = Props.slicedArrayPartUp.map((m, index) =>
+    const firstBigCouponFirstHalf = Props.couponPartOne.map((m, index) =>
         <div key={m} className={Props.WillWeBlind(Props.newBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
         </div>
     )
 
-    const partDownCouponCreator = Props.slicedArrayParDown.map((m, index) =>
+    const firstBigCouponSecondHalf = Props.couponPartTwo.map((m, index) =>
         <div key={m} className={Props.WillWeBlind(Props.secondBlindArray, index) ? "blindItem" : 'couponItem'}>
             <p>{m}</p></div>
     )
 
-    const secondPartUpCouponCreator = Props.secondSlicedArrayPartUp.map((m, index) =>
+    const secondBigCouponFirstHalf = Props.couponPartThree.map((m, index) =>
         <div key={m} className={Props.WillWeBlind(Props.thirdBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
         </div>
     )
 
-    const secondPartDownCouponCreator = Props.secondSlicedArrayParDown.map((m, index) =>
+    const secondBigCouponSecondHalf = Props.couponPartFour.map((m, index) =>
         <div key={m} className={Props.WillWeBlind(Props.forthBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
         </div>
     )
-    const newCouponCreator = Props.newStrings.map((m, index) =>
+    const firstMiniCoupon = Props.couponPartOne.map((m, index) =>
         <div key={m} className={Props.WillWeBlind(Props.newBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
         </div>
     )
 
-    const secondCouponCreator = Props.newStringsTwo.map((m, index) =>
+    const secondMiniCoupon = Props.couponPartTwo.map((m, index) =>
         <div key={m} className={Props.WillWeBlind(Props.secondBlindArray, index) ? "blindItem" : 'couponItem'}>
             <p>{m}</p></div>
     )
 
-    const thirdCouponCreator = Props.newStringsThree.map((m, index) =>
+    const thirdMiniCoupon = Props.couponPartThree.map((m, index) =>
         <div key={m} className={Props.WillWeBlind(Props.thirdBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
         </div>
     )
@@ -60,66 +58,79 @@ const Coupon = (Props: CouponPropsType) => {
     }
 
     return (
-        <>{Props.lock ?
-            <div className={"closedCoupon"}>
-                <button onClick={Props.toggler}>PRINT COUPONS</button>
-            </div>
-            :
-            <div className={'twoCoupons'}>
+        <>
+            {Props.lock
+                ?
+                <div className={"closedCoupon"}>
+                    <button onClick={Props.toggler}>PRINT COUPONS</button>
+                </div>
+                :
+                <div className={'twoCoupons'}>
 
-                {Props.cssBoolean > 80 ?
-                    <div className={"BigCouponWrapper"}>
-                        <div className={"bigCoupon"}>
-                            <div className={"BigCouponPart"}>
-                                {partUpCouponCreator}
+                    {Props.cssBoolean > 80 ?
+
+                        <div className={"bigCouponSpace"}>
+                            {/*BigComponet partOne={firstBigCouponFirstHalf} partTwo ={firstBigCouponSecondHalf}*/}
+                            <div className={"bigCoupon"}>
+                                <div className={"sideBigLogo"}><img src={logo}/></div>
+                                <div className={"BigCouponWrapper"}>
+                                    <div className={"BigCouponPart"}>
+                                        {firstBigCouponFirstHalf}
+                                    </div>
+                                    <div className={"BigCouponPart"}>
+                                        {firstBigCouponSecondHalf}
+                                    </div>
+                                </div>
+
                             </div>
-                            <div className={"BigCouponPart"}>
-                                {partDownCouponCreator}
+                            <div className={"bigCoupon"}>
+                                {/*BigComponet partOne={firstBigCouponFirstHalf} partTwo ={firstBigCouponSecondHalf}*/}
+                                <div className={"sideBigLogo"}><img src={logo}/></div>
+                                <div className={"BigCouponWrapper"}>
+                                    <div className={"BigCouponPart"}>
+                                        {secondBigCouponFirstHalf}
+                                    </div>
+                                    <div className={"BigCouponPart"}>
+                                        {secondBigCouponSecondHalf}
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
-                        <div className={"bigCoupon"}>
-                            <div className={"BigCouponPart"}>
-                                {secondPartUpCouponCreator}
-                            </div>
-                            <div className={"BigCouponPart"}>
-                                {secondPartDownCouponCreator}
+                        :
+                        (<>
+                            <div className={'couponSpace'}>
+
+                                {/*Componet coupon={firstMiniCoupon}*/}
+                                <div className={"couponWrapper"}>
+                                    <div className={"sideLogo"}><img src={logo}/></div>
+                                    <div className={"coupon"}>{firstMiniCoupon}</div>
+                                </div>
+
+                                 {/*Componet coupon={secondMiniCoupon}*/}
+                                <div className={"couponWrapper"}>
+                                    <div className={"sideLogo"}><img src={logo}/></div>
+                                    <div className={"coupon"}>{secondMiniCoupon}</div>
+                                </div>
+
+                                {/*Componet coupon={thirdMiniCoupon}*/}
+                                <div className={"couponWrapper"}>
+                                    <div className={"sideLogo"}><img src={logo}/></div>
+                                    <div className={"coupon"}>{thirdMiniCoupon}</div>
+                                </div>
+
                             </div>
 
-                        </div>
+                        </>)}
+
+                    <div className={"couponButtons"}>
+
+                        <button onClick={Props.ButtonGenerating}>GENERATE COUPONS</button>
+                        <button onClick={Printing}>PRINT</button>
+                        <button onClick={Props.toggler}>CLOSE</button>
 
                     </div>
-                    :
-                    (<>
-                        <div className={'couponWrapper'}>
-                            <div className={"coupon"}>
-
-                                {newCouponCreator}
-
-                            </div>
-
-                            <div className={"coupon"}>
-
-                                {secondCouponCreator}
-
-                            </div>
-
-                            <div className={"coupon"}>
-
-                                {thirdCouponCreator}
-
-                            </div>
-                        </div>
-                    </>)}
-
-
-                <div className={"couponButtons"}>
-                    <button onClick={Props.ButtonGenerating}>GENERATE COUPONS</button>
-                    <button onClick={Printing}>PRINT</button>
-                    <button onClick={Props.toggler}>CLOSE</button>
-
-                </div>
-            </div>}
+                </div>}
 
         </>
     );

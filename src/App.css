@@ -93,6 +93,7 @@ body {
     border-radius: 20px;
     background: var(--bg-dark);
     cursor: default;
+    z-index: 10;
 }
 
 .CircleMenu {
@@ -163,23 +164,6 @@ body {
     cursor: pointer;
 }
 
-/*.menuItem:before, .menuItem:after{*/
-/*    content: "";*/
-/*    width: 60px;*/
-/*    height: 20px;*/
-/*    background: var(--bg-dark);*/
-/*    border: 1px solid var(--dark-color);*/
-/*}*/
-/*.refreshButton img{*/
-/*    width: 100px;*/
-/*    height: 100px;*/
-/*}*/
-/*.refreshButton:hover{*/
-/*    transform: rotateZ(-45deg);*/
-/*    cursor: pointer;*/
-/*    border: 5px solid var(--dark-color);*/
-/*    background: var(--bg-dark);*/
-/*}*/
 .containerCreator {
     width: 100px;
     height: 100px;
@@ -397,20 +381,37 @@ body {
     border-radius: 20px;
 }
 
-.couponWrapper {
-    margin: 50px auto;
-    width: 800px;
+.couponSpace {
+    margin: 50px 0 0 190px;
+    width: 1000px;
     min-height: 300px;
     background: var(--bg-light);
 }
+.couponWrapper{
+    display: flex;
+    width: 800px;
+    min-height: 300px;
+    border: 2px solid var(--dark-color);
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.sideLogo, .sideBigLogo{
+    position: relative;
+    width: 140px;
+    min-height: 100px;
+    margin: 30px;
+    border: 3px solid var(--dark-color);
+    border-right: none;
+    border-radius: 20px;
 
-.BigCouponWrapper {
-    margin: 50px 30px;
-    width: 1000px;
-    min-height: 500px;
-
-    background: var(--bg-light);
-
+}
+.sideLogo img{
+    min-width: 200px;
+    position: relative;
+    top: 75px;
+    left: -10px;
+    transform: rotate(-90deg);
+    z-index: 1;
 }
 
 .coupon {
@@ -418,19 +419,51 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 30px auto;
-    width: 82%;
-    height: 70%;
+    width: 490px;
+    height: 235px;
     text-align: center;
+    align-items: center;
     border: 5px solid var(--dark-color);
     border-radius: 20px;
 }
 
+.couponSpace  .coupon .couponItem {
+    margin: 3px auto;
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--light-color);
+    border-radius: 50%;
+}
+
+.couponSpace .coupon .blindItem {
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--light-color);
+    background: var(--bg-light);
+    color: var(--bg-light);
+    border-radius: 50%;
+}
+.bigCouponSpace{
+    margin: 50px 0 0 85px;
+    width: 1000px;
+    min-height: 300px;
+    background: var(--bg-light);
+}
+.BigCouponWrapper {
+
+    width: 800px;
+    min-height: 300px;
+    /*border: 2px solid red;*/
+}
+
+
+
 .bigCoupon {
     display: flex;
-    flex-wrap: wrap;
     margin: 30px auto;
     width: 960px;
-    height: 70%;
+    min-height: 300px;
     text-align: center;
     border: 5px solid var(--dark-color);
     border-radius: 20px;
@@ -438,33 +471,41 @@ body {
 
 .BigCouponPart {
     padding: 10px;
-    margin: 20px auto;
+    margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
+    width: 600px;
     height: 220px;
+    border: 1px solid var(--dark-color);
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    /*background-color: var(--dark-color);*/
 }
 
-.couponWrapper .coupon .couponItem {
-    margin: 3px auto;
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--light-color);
-    border-radius: 50%;
+.sideBigLogo img{
+    min-width: 235px;
+    position: relative;
+    top: 145px;
+    left: -30px;
+    transform: rotate(-90deg);
+    z-index: 1;
 }
+
 
 .bigCoupon .couponItem {
     margin: 2px auto;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border: 2px solid var(--light-color);
     border-radius: 50%;
+    background-color: var(--bg-light);
 }
 
 .bigCoupon .blindItem {
     margin: 0 auto;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border: 2px solid var(--light-color);
     background: var(--bg-light);
     color: var(--bg-light);
@@ -491,15 +532,7 @@ body {
     cursor: pointer;
 }
 
-.blindItem {
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    border: 2px solid var(--light-color);
-    background: var(--bg-light);
-    color: var(--bg-light);
-    border-radius: 50%;
-}
+
 
 .printWrapper {
     height: 297mm;

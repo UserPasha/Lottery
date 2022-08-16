@@ -6,6 +6,7 @@ import GenerateButton from "./Components/GenerateButton";
 import {CouponZone} from "./Components/CouponZone";
 import MenuToggler from "./Components/MenuToggler";
 
+
 type LotteryAppPropsType = {
     maxDigit: number
 }
@@ -77,6 +78,7 @@ const LotteryApp = (Props: LotteryAppPropsType) => {
 
                 <Field startNumbers={ArrayOfNumbers} arrayToPush={arrayToPush}/>
                 <CouponZone maxDigit={Props.maxDigit}/>
+
             </div>
         </>
     );

@@ -24,16 +24,10 @@ export const CouponZone = (Props: CouponZoneType) => {
         let threeDigitWithCurrentIndex = newArray2[thirdCurrentDigit]
         emptyArrayForDigits.push(threeDigitWithCurrentIndex)
         let newArray3 = newArray2.filter(f => f !== threeDigitWithCurrentIndex)
-        //console.log("start array after 3 "+newArray3)
-        //console.log("empty array after 3 "+emptyArrayForDigits)
         let fourthCurrentDigit = Math.ceil(Math.random() * newArray3.length - 1)
-        //console.log("current 4 "+fourthCurrentDigit)
         let fourDigitWithCurrentIndex = newArray3[fourthCurrentDigit]
-        //console.log("put this number in array "+fourDigitWithCurrentIndex)
         emptyArrayForDigits.push(fourDigitWithCurrentIndex)
         let newArray4 = newArray3.filter(f => f !== fourDigitWithCurrentIndex)
-        //console.log("start array after 4 "+newArray4)
-        //console.log("empty array after 4 "+emptyArrayForDigits)
         let fifthCurrentDigit = Math.ceil(Math.random() * newArray4.length - 1)
         let fiveDigitWithCurrentIndex = newArray4[fifthCurrentDigit]
         emptyArrayForDigits.push(fiveDigitWithCurrentIndex)
@@ -164,38 +158,34 @@ export const CouponZone = (Props: CouponZoneType) => {
         <>
             {Props.maxDigit > 80 ? <Coupon cssBoolean={Props.maxDigit}
                                            lock={lock}
+                                           couponPartOne={slicedArrayPartUp}
+                                           couponPartTwo={slicedArrayParDown}
+                                           couponPartThree={secondSlicedArrayPartUp}
+                                           couponPartFour={secondSlicedArrayParDown}
                                            toggler={toggler}
-                                           slicedArrayPartUp={slicedArrayPartUp}
-                                           slicedArrayParDown={slicedArrayParDown}
-                                           secondSlicedArrayPartUp={secondSlicedArrayPartUp}
-                                           secondSlicedArrayParDown={secondSlicedArrayParDown}
                                            WillWeBlind={WillWeBlind}
+                                           ButtonGenerating={ButtonGenerating}
                                            newBlindArray={bigBlindArray}
                                            secondBlindArray={secondBigBlindArray}
                                            thirdBlindArray={thirdBigBlindArray}
                                            forthBlindArray={forthBlindArray}
-                                           newStrings={newStrings}
-                                           newStringsTwo={newStringsTwo}
-                                           newStringsThree={newStringsThree}
-                                           ButtonGenerating={ButtonGenerating}
+
                 />
                 :
                 <Coupon cssBoolean={Props.maxDigit}
                         lock={lock}
-                        toggler={toggler}
-                        slicedArrayPartUp={slicedArrayPartUp}
-                        slicedArrayParDown={slicedArrayParDown}
-                        secondSlicedArrayPartUp={secondSlicedArrayPartUp}
-                        secondSlicedArrayParDown={secondSlicedArrayParDown}
-                        WillWeBlind={WillWeBlind}
                         newBlindArray={newBlindArray}
                         secondBlindArray={secondBlindArray}
                         thirdBlindArray={thirdBlindArray}
                         forthBlindArray={forthBlindArray}
-                        newStrings={newStrings}
-                        newStringsTwo={newStringsTwo}
-                        newStringsThree={newStringsThree}
+                        toggler={toggler}
+                        WillWeBlind={WillWeBlind}
                         ButtonGenerating={ButtonGenerating}
+                        couponPartOne={newStrings}
+                        couponPartTwo={newStringsTwo}
+                        couponPartThree={newStringsThree}
+                        couponPartFour={secondSlicedArrayParDown}
+
                 />}
 
         </>
