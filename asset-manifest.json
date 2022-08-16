@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/Lottery/static/css/main.b6fb58ad.css",
-    "main.js": "/Lottery/static/js/main.2e13ad9b.js",
+    "main.css": "/Lottery/static/css/main.b6b9024a.css",
+    "main.js": "/Lottery/static/js/main.65db06a0.js",
     "static/js/787.c90eb3c1.chunk.js": "/Lottery/static/js/787.c90eb3c1.chunk.js",
+    "static/media/caretta-beach.png": "/Lottery/static/media/caretta-beach.69af3936ad4a6db24b0b.png",
     "index.html": "/Lottery/index.html",
-    "main.b6fb58ad.css.map": "/Lottery/static/css/main.b6fb58ad.css.map",
-    "main.2e13ad9b.js.map": "/Lottery/static/js/main.2e13ad9b.js.map",
+    "main.b6b9024a.css.map": "/Lottery/static/css/main.b6b9024a.css.map",
+    "main.65db06a0.js.map": "/Lottery/static/js/main.65db06a0.js.map",
     "787.c90eb3c1.chunk.js.map": "/Lottery/static/js/787.c90eb3c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6fb58ad.css",
-    "static/js/main.2e13ad9b.js"
+    "static/css/main.b6b9024a.css",
+    "static/js/main.65db06a0.js"
   ]
 }
