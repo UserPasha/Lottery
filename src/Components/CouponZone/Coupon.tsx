@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "../../Common/assets/images/caretta-beach.png"
+import CouponPart from "./CouponPart";
 
 type CouponPropsType = {
     cssBoolean: number
@@ -19,40 +20,6 @@ type CouponPropsType = {
 
 const Coupon = (Props: CouponPropsType) => {
 
-    const firstBigCouponFirstHalf = Props.couponPartOne.map((m, index) =>
-        <div key={m} className={Props.WillWeBlind(Props.newBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
-        </div>
-    )
-
-    const firstBigCouponSecondHalf = Props.couponPartTwo.map((m, index) =>
-        <div key={m} className={Props.WillWeBlind(Props.secondBlindArray, index) ? "blindItem" : 'couponItem'}>
-            <p>{m}</p></div>
-    )
-
-    const secondBigCouponFirstHalf = Props.couponPartThree.map((m, index) =>
-        <div key={m} className={Props.WillWeBlind(Props.thirdBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
-        </div>
-    )
-
-    const secondBigCouponSecondHalf = Props.couponPartFour.map((m, index) =>
-        <div key={m} className={Props.WillWeBlind(Props.forthBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
-        </div>
-    )
-    const firstMiniCoupon = Props.couponPartOne.map((m, index) =>
-        <div key={m} className={Props.WillWeBlind(Props.newBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
-        </div>
-    )
-
-    const secondMiniCoupon = Props.couponPartTwo.map((m, index) =>
-        <div key={m} className={Props.WillWeBlind(Props.secondBlindArray, index) ? "blindItem" : 'couponItem'}>
-            <p>{m}</p></div>
-    )
-
-    const thirdMiniCoupon = Props.couponPartThree.map((m, index) =>
-        <div key={m} className={Props.WillWeBlind(Props.thirdBlindArray, index) ? "blindItem" : 'couponItem'}><p>{m}</p>
-        </div>
-    )
-
     const Printing = () => {
         window.print();
     }
@@ -70,28 +37,36 @@ const Coupon = (Props: CouponPropsType) => {
                     {Props.cssBoolean > 80 ?
 
                         <div className={"bigCouponSpace"}>
-                            {/*BigComponet partOne={firstBigCouponFirstHalf} partTwo ={firstBigCouponSecondHalf}*/}
+
                             <div className={"bigCoupon"}>
                                 <div className={"sideBigLogo"}><img src={logo}/></div>
                                 <div className={"BigCouponWrapper"}>
                                     <div className={"BigCouponPart"}>
-                                        {firstBigCouponFirstHalf}
+                                        <CouponPart partArray={Props.couponPartOne}
+                                                    WillWeBlind={Props.WillWeBlind}
+                                                    blindArray={Props.newBlindArray}/>
                                     </div>
                                     <div className={"BigCouponPart"}>
-                                        {firstBigCouponSecondHalf}
+                                        <CouponPart partArray={Props.couponPartTwo}
+                                                    WillWeBlind={Props.WillWeBlind}
+                                                    blindArray={Props.secondBlindArray}/>
+
                                     </div>
                                 </div>
 
                             </div>
                             <div className={"bigCoupon"}>
-                                {/*BigComponet partOne={firstBigCouponFirstHalf} partTwo ={firstBigCouponSecondHalf}*/}
                                 <div className={"sideBigLogo"}><img src={logo}/></div>
                                 <div className={"BigCouponWrapper"}>
                                     <div className={"BigCouponPart"}>
-                                        {secondBigCouponFirstHalf}
+                                        <CouponPart partArray={Props.couponPartThree}
+                                                    WillWeBlind={Props.WillWeBlind}
+                                                    blindArray={Props.thirdBlindArray}/>
                                     </div>
                                     <div className={"BigCouponPart"}>
-                                        {secondBigCouponSecondHalf}
+                                        <CouponPart partArray={Props.couponPartFour}
+                                                    WillWeBlind={Props.WillWeBlind}
+                                                    blindArray={Props.forthBlindArray}/>
                                     </div>
                                 </div>
                             </div>
@@ -101,22 +76,31 @@ const Coupon = (Props: CouponPropsType) => {
                         (<>
                             <div className={'couponSpace'}>
 
-                                {/*Componet coupon={firstMiniCoupon}*/}
                                 <div className={"couponWrapper"}>
                                     <div className={"sideLogo"}><img src={logo}/></div>
-                                    <div className={"coupon"}>{firstMiniCoupon}</div>
+                                    <div className={"coupon"}>
+                                        <CouponPart partArray={Props.couponPartOne}
+                                                    WillWeBlind={Props.WillWeBlind}
+                                                    blindArray={Props.newBlindArray}/>
+                                    </div>
                                 </div>
 
-                                 {/*Componet coupon={secondMiniCoupon}*/}
                                 <div className={"couponWrapper"}>
                                     <div className={"sideLogo"}><img src={logo}/></div>
-                                    <div className={"coupon"}>{secondMiniCoupon}</div>
+                                    <div className={"coupon"}>
+                                        <CouponPart partArray={Props.couponPartTwo}
+                                                    WillWeBlind={Props.WillWeBlind}
+                                                    blindArray={Props.secondBlindArray}/>
+                                    </div>
                                 </div>
 
-                                {/*Componet coupon={thirdMiniCoupon}*/}
                                 <div className={"couponWrapper"}>
                                     <div className={"sideLogo"}><img src={logo}/></div>
-                                    <div className={"coupon"}>{thirdMiniCoupon}</div>
+                                    <div className={"coupon"}>
+                                        <CouponPart partArray={Props.couponPartThree}
+                                                    WillWeBlind={Props.WillWeBlind}
+                                                    blindArray={Props.thirdBlindArray}/>
+                                    </div>
                                 </div>
 
                             </div>

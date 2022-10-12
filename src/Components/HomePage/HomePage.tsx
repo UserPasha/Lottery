@@ -7,6 +7,10 @@ const HomePage = () => {
             <div className={"HomePageMenuWrapper"}>
 
                 <div className={'GameWrapper'}>
+                    <Link to={"/tutorial"}>TUTORIAL</Link>
+                </div>
+
+                <div className={'GameWrapper'}>
                     <Link to={"/mini-game"}>FAST GAME</Link>
                 </div>
 

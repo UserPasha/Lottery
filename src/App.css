@@ -570,6 +570,51 @@ body {
     height: 120px;
     margin-left: 100px;
 }
+.tutorialWrapper{
+    width: 1000px;
+    min-height: 800px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px auto;
+    padding: 20px;
+}
+.tutorialWrapper h2, h3{
+    margin: 10px auto;
+}
+.tutorialWrapper .tutorialContainer{
+    min-height: 100px;
+    min-width: 300px;
+    padding: 20px;
+    border: 1px solid var(--dark-color);
+    border-radius: 20px;
+    box-shadow:  -5px -5px 12px var(--dark-color);
+    margin-top: 20px;
+}
+.tutorialWrapper .kindGame{
+    min-height: 100px;
+    min-width: 300px;
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+}
+.borderClass{
+    border-bottom: 1px solid var(--dark-color);
+}
+.tutorialWrapper .kindGame p{
+    margin-left: 20px;
+}
+.tutorialWrapper .kindGame img{
+    max-width: 250px;
+}
+.tutorialWrapper .examples{
+    padding: 20px;
+    margin-top: 20px;
+}
+.tutorialWrapper .examples img{
+    max-width: 350px;
+}
 
 @media (max-width: 1200px) {
     .appWrapper {

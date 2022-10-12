@@ -6,9 +6,9 @@ type GenerateButtonPropsType = {
     maxDigit: number
 }
 const GenerateButton = (Props: GenerateButtonPropsType) => {
-    let DisablingButton
-    Props.maxDigit > 70? DisablingButton=Props.droppedNumbers.length + 7 : DisablingButton=Props.droppedNumbers.length + 4
-    const disabling = Props.maxDigit < DisablingButton
+    let QuantityNumbersToDisablingButton
+    Props.maxDigit > 70? QuantityNumbersToDisablingButton=Props.droppedNumbers.length + 7 : QuantityNumbersToDisablingButton=Props.droppedNumbers.length + 4
+    const disabling = Props.maxDigit < QuantityNumbersToDisablingButton
     const gameButtonText = 'GENERATE'
     const gameOverButtonText = 'GAME OVER'
     return (
