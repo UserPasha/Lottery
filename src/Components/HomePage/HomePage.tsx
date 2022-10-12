@@ -9,8 +9,8 @@ const HomePage = () => {
                 <div className={'GameWrapper'}>
                     <Link to={"/mini-game"}>FAST GAME</Link>
                 </div>
-                <div className={'GameWrapper'}>
 
+                <div className={'GameWrapper'}>
                     <Link to={"/original-game"}>ORIGINAL</Link>
                 </div>
 

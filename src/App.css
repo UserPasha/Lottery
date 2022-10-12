@@ -164,6 +164,16 @@ body {
     cursor: pointer;
 }
 
+.restNumbers{
+    width: 800px;
+    height: 40px;
+    margin: 5px auto;
+    color: #cb3232;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
 .containerCreator {
     width: 100px;
     height: 100px;
@@ -303,6 +313,12 @@ body {
     border-radius: 20px;
     background: var(--dark-color);
     color: var(--light-color);
+}
+.generateButton button:disabled, .generateButton button:disabled:hover {
+    border: none;
+    color: var(--dark-color);
+    background: var(--bg-light);
+    cursor: not-allowed;
 }
 
 .DroppedNumbers {
@@ -480,7 +496,6 @@ body {
     border-radius: 20px;
     text-align: center;
     align-items: center;
-    /*background-color: var(--dark-color);*/
 }
 
 .sideBigLogo img{
@@ -630,3 +645,13 @@ body {
         border: none;
     }
 }
+/*@media screen and (min-width: 768px){*/
+/*    .GameWrapper{*/
+/*        display: none;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 768px){*/
+/*    .GameWrapperOm{*/
+/*        display: none;*/
+/*    }*/
+/*}*/

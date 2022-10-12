@@ -4,7 +4,7 @@ import Coupon from "./Coupon";
 type CouponZoneType = {
     maxDigit: number
 }
-export const CouponZone = (Props: CouponZoneType) => {
+export const CouponContainer = (Props: CouponZoneType) => {
 
     const CouponStringCreator = (minDigit: number, maxDigit: number) => {
         const eArray: Array<number> = []

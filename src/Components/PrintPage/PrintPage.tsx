@@ -7,12 +7,8 @@ const PrintPage = () => {
     return (
         <div className={"printWrapper"}>
 
-
-           {/*----*/}
-           {/* TEST*/}
-           {/* _________ ***** /|\*/}
-           {/* test*/}
             <a href="#" onClick={Printing} className="action-print">Распечатать</a>
+
         </div>
     );
 };

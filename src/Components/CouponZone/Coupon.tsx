@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "./../Common/assets/images/caretta-beach.png"
+import logo from "../../Common/assets/images/caretta-beach.png"
 
 type CouponPropsType = {
     cssBoolean: number

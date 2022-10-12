@@ -3,11 +3,13 @@ import {Link} from "react-router-dom";
 
 
 
-type MenuToglerType = {
+type MenuTogglerType = {
     refreshGame: ()=> void
 }
-export const MenuToggler: React.FC<MenuToglerType> = ({refreshGame}) => {
+
+export const MenuToggler: React.FC<MenuTogglerType> = ({refreshGame}) => {
     const [lock, setLock] = useState<boolean>(true)
+
     const toggler = () => {
         setLock(!lock)
     }
@@ -15,7 +17,8 @@ export const MenuToggler: React.FC<MenuToglerType> = ({refreshGame}) => {
     const handleRestart = ()=>{
         refreshGame()
     }
-    return (lock ?
+    return (lock
+            ?
             (<div className={'menu'} onClick={toggler}>
                 <div className={'menuItem'}></div>
                 <div className={'menuItem'}></div>

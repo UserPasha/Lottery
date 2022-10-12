@@ -1,13 +1,11 @@
 import React from 'react';
 
-
 type TablePropsType = {
     numberOfDigit: number
     arrayToPush: number[]
-
 }
 
-const Table = (Props: TablePropsType) => {
+const TableComponent = (Props: TablePropsType) => {
 
     const DroppedNumbersTable = Props.arrayToPush.map(m=>
     <div key={m} className={'DroppedNumberItem'}><p>{[m]}</p></div>)
@@ -22,4 +20,4 @@ const Table = (Props: TablePropsType) => {
     );
 };
 
-export default Table;
+export default TableComponent;
